@@ -1,0 +1,43 @@
+# Copyright (c) 2021-2022 TiaC Systems
+# SPDX-License-Identifier: Apache-2.0
+
+name: Documentation Build
+
+on:
+  workflow_dispatch: # And manually on button click
+  push:
+    branches:
+      - main
+
+jobs:
+  doc-build:
+    name: Build and upload documentation to artifacts
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+        with:
+          path: workspace
+          submodules: recursive
+          ref: ${{ github.ref }}
+
+      - name: Build documentation
+        working-directory: workspace
+        run: |
+          archive="doc_build_${GITHUB_RUN_ID}.tgz"
+          mkdir -p doc && git archive --format=tgz --output="doc/${archive}" ${{ github.ref }}
+
+      - name: Archive documentation
+        working-directory: workspace
+        run: |
+          # synopsys: publish2 docroot electronic <archive>
+          #   <archive> := doc_build_<GITHUB_RUN_ID_from_doc-build>.tgz
+          archive="doc_build_${GITHUB_RUN_ID}.tgz"
+          mkdir -p doc && echo "publish2 docroot electronic ${archive}" > "doc/monitor_${GITHUB_RUN_ID}.txt"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: doc
+          path: workspace/doc
