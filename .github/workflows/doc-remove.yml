@@ -1,0 +1,24 @@
+# Copyright (c) 2021-2022 TiaC Systems
+# SPDX-License-Identifier: Apache-2.0
+
+name: Documentation Remove
+
+on:
+  workflow_dispatch: # And manually on button click
+
+jobs:
+  doc-remove:
+    name: Remove online documentation
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Create documentation removing monitor
+        run: |
+          # synopsys: remove docroot electronic
+          mkdir -p doc && echo "remove docroot electronic" > "doc/monitor_${GITHUB_RUN_ID}.txt"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: doc
+          path: doc
