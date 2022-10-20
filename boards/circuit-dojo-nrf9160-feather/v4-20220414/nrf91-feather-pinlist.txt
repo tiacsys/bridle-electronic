@@ -1,0 +1,496 @@
+Pinlist
+
+Exported from nrf91-feather.sch at 20.10.22 14:02
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Part     Pad      Pin        Dir      Net
+
+C1       1        1          pas      ANT_FILT
+         2        2          pas      ANT
+
+C2       1        1          pas      ANT
+         2        2          pas      GND
+
+C3       1        1          pas      +3V3
+         2        2          pas      GND
+
+C4       1        1          pas      +3V3
+         2        2          pas      GND
+
+C7       1        1          pas      VSYS
+         2        2          pas      GND
+
+C8       1        1          pas      +3V3
+         2        2          pas      GND
+
+C9       1        1          pas      N$5
+         2        2          pas      GND
+
+C10      1        1          pas      +3V3
+         2        2          pas      GND
+
+C11      1        1          pas      VBUS
+         2        2          pas      GND
+
+C12      1        1          pas      GPS
+         2        2          pas      GPS_ANT
+
+C13      1        1          pas      VBUS
+         2        2          pas      GND
+
+C14      1        1          pas      VBUS
+         2        2          pas      GND
+
+C15      1        1          pas      CP2102N-VDD
+         2        2          pas      GND
+
+C16      1        1          pas      CP2102N-VDD
+         2        2          pas      GND
+
+C17      1        1          pas      VSYS
+         2        2          pas      GND
+
+C18      1        1          pas      +3V3
+         2        2          pas      GND
+
+C19      1        1          pas      LNA_SW_OUT
+         2        2          pas      GND
+
+D1       1        2          pas      VSYS
+         2        1          pas      VBUS
+
+D2       1        2          pas      VCC_5V0
+         2        1          pas      VBUS
+
+D3       A        A          pas      N$8
+         C        C          pas      P0.03/D7
+
+D4       A        A          pas      N$13
+         C        C          pas      CHRG
+
+J2       1        1          io       VBAT
+         2        2          io       !EN
+         3        3          io       VCC_5V0
+         4        4          io       P0.04/D8
+         5        5          io       P0.03/D7
+         6        6          io       P0.02/D6
+         7        7          io       P0.01/D5
+         8        8          io       P0.00/D4
+         9        9          io       P0.30/D3
+         10       10         io       P0.29/D2
+         11       11         io       P0.27/SCL
+         12       12         io       P0.26/SDA
+
+J3       1        1          io       !RESET
+         2        2          io       +3V3
+         3        3          io       MODE/WAKE
+         4        4          io       GND
+         5        5          io       P0.13/A0
+         6        6          io       P0.14/A1
+         7        7          io       P0.15/A2
+         8        8          io       P0.16/A3
+         9        9          io       P0.17/A4
+         10       10         io       P0.18/A5
+         11       11         io       P0.19/SCK
+         12       12         io       P0.21/COPI
+         13       13         io       P0.22/CIPO
+         14       14         io       P0.23/RX
+         15       15         io       P0.24/TX
+         16       16         io       P0.31/NRF_PS_EN
+
+J4       1        SIG        pas      ANT_FILT
+         2        GND        pas      GND
+         3        GND        pas      GND
+
+J5       G1       GND        pwr      GND
+         G2       GND        pwr      GND
+         G3       GND        pwr      GND
+         G4       GND        pwr      GND
+         S1       VCC        pwr      SIM_VCC
+         S2       RST        in       SIM_RST
+         S3       CLK        in       SIM_CLK
+         S4       GND        pwr      GND
+         S5       VPP        pwr      VPP
+         S6       I/O        io       SIM_IO
+
+J6       1        1          pas      VBAT
+         2        2          pas      GND
+         S1       SHIELD     pas      GND
+         S2       SHIELD     pas      GND
+
+J7       1        SIG        pas      GPS_ANT
+         2        GND        pas      GND
+         3        GND        pas      GND
+
+J8       1        GND        pwr      GND
+         2        VBUS       pwr      VBUS
+         3        CC1        pas               *** unconnected ***
+         4        SBU2       pas               *** unconnected ***
+         5        D-         pas      DIFF_N
+         6        D+         pas      DIFF_P
+         7        D+         pas      DIFF_P
+         8        D-         pas      DIFF_N
+         9        CC2        pas               *** unconnected ***
+         10       SBU1       pas               *** unconnected ***
+         11       VBUS       pwr      VBUS
+         12       GND        pwr      GND
+         S1       SHIELD     pas      GND
+         S2       SHIELD     pas      GND
+         S3       SHIELD     pas      GND
+         S4       SHIELD     pas      GND
+         S5       SHIELD     pas      GND
+         S6       SHIELD     pas      GND
+
+J9       1        VCC        io       +3V3
+         2        SWDIO      io       SWDIO
+         3        !RST       io                *** unconnected ***
+         4        SWCLK      io       SWCLK
+         5        GND        io       GND
+         6        SWO        io                *** unconnected ***
+
+JMP1     P$1      1          pas      LIS2DH_INT1
+         P$2      2          pas      P0.30/D3
+
+JMP2     P$1      1          pas      VSYS
+         P$2      2          pas      NRF_PS_EN_JMP
+         P$3      3          pas      P0.31/NRF_PS_EN
+
+JMP3     P$1      1          pas      LIS2DH_INT2
+         P$2      2          pas      P0.29/D2
+
+JMP4     P$1      1          pas      P0.13/A0
+         P$2      2          pas      PS_MODE
+
+L1       1        1          pas      GND
+         2        2          pas      ANT_FILT
+
+L2       1        1          pas      PS_SW
+         2        2          pas      +3V3
+
+L4       1        1          pas      LNA_SW_OUT
+         2        2          pas      GPS_ANT
+
+Q1       1        G          pas      RTC_INT
+         2        S          pas      VSYS
+         3        D          pas      RTC_PS_EN
+
+Q2       1        S          io       GND
+         2        G          io       P0.25/VBAT_MEAS_EN
+         3        D          pas      N$6
+         4        S          pas      VBAT
+         5        G          pas      N$7
+         6        D          io       N$7
+
+Q3       1        G          pas      VBUS
+         2        S          pas      VSYS
+         3        D          pas      VBAT
+
+Q4       1        G          io       MODE/WAKE
+         2        S          io       GND
+         3        D          io       P0.12/MD
+
+Q5       1        G          io       !EN
+         2        S          io       GND
+         3        D          io       PS_EN
+
+R1       1        1          pas      GND
+         2        2          pas      COEX0/GPS_EN
+
+R2       1        1          pas      GND
+         2        2          pas      PS_EN_CC
+
+R3       1        1          pas      P0.20/VBAT_MEAS
+         2        2          pas      N$6
+
+R4       1        1          pas      CP2102N-!RST
+         2        2          pas      VBUS
+
+R5       1        1          pas      PS_EN
+         2        2          pas      PS_EN_CC
+
+R6       1        1          pas      RTC_INT
+         2        2          pas      VSYS
+
+R7       1        1          pas      +3V3
+         2        2          pas      PS_MODE
+
+R8       1        1          pas      GND
+         2        2          pas      P0.20/VBAT_MEAS
+
+R9       1        1          pas      N$4
+         2        2          pas      +3V3
+
+R10      1        1          pas      N$7
+         2        2          pas      VBAT
+
+R11      1        1          pas      N$8
+         2        2          pas      +3V3
+
+R12      1        1          pas      GND
+         2        2          pas      PROG
+
+R13      1        1          pas      GND
+         2        2          pas      MODE/WAKE
+
+R14      1        1          pas      N$13
+         2        2          pas      VBUS
+
+R15      1        1          pas      N$11
+         2        2          pas      VBUS
+
+R16      1        1          pas      GND
+         2        2          pas      N$11
+
+R17      1        1          pas      P0.26/SDA
+         2        2          pas      +3V3
+
+R18      1        1          pas      P0.27/SCL
+         2        2          pas      +3V3
+
+R19      1        1          pas      GND
+         2        2          pas      !EN
+
+R20      1        1          pas      N$3
+         2        2          pas      +3V3
+
+SW1      1        1          pas      !RESET
+         2        2          pas      GND
+         3        1          pas      !RESET
+         4        2          pas      GND
+
+SW2      1        1          pas      VSYS
+         2        2          pas      MODE/WAKE
+         3        1          pas      VSYS
+         4        2          pas      MODE/WAKE
+
+TP1      TP       TP         in       SWDIO
+
+TP2      TP       TP         in       SWCLK
+
+TP3      TP       TP         in       SIM_CLK
+
+TP4      TP       TP         in       SIM_RST
+
+TP5      TP       TP         in       SIM_VCC
+
+TP6      TP       TP         in       SIM_IO
+
+U1       1        GND_SHIELD pwr      GND
+         2        P0.05      io       P0.05/USB_UART_RX
+         3        P0.06      io       P0.06/USB_UART_TX
+         4        P0.07      io       FLASH_CS
+         5        GND_SHIELD pwr      GND
+         6        GND_SHIELD pwr      GND
+         7        GND_SHIELD pwr      GND
+         8        GND_SHIELD pwr      GND
+         9        GND_SHIELD pwr      GND
+         11       GND_SHIELD pwr      GND
+         12       VDD_GPIO   pwr      +3V3
+         13       DEC0       pwr      N$5
+         14       GND_SHIELD pwr      GND
+         15       P0.08      io       FLASH_WP
+         16       P0.09      io       FLASH_SI
+         17       GND_SHIELD pwr      GND
+         18       P0.10      io       FLASH_HOLD
+         19       P0.11      io       FLASH_SCK
+         20       P0.12      io       P0.12/MD
+         21       GND_SHIELD pwr      GND
+         22       VDD        pwr      +3V3
+         23       P0.13/AIN0 io       P0.13/A0
+         24       P0.14/AIN1 io       P0.14/A1
+         25       P0.15/AIN2 io       P0.15/A2
+         26       P0.16/AIN3 io       P0.16/A3
+         27       GND_SHIELD pwr      GND
+         28       P0.17/AIN4 io       P0.17/A4
+         29       P0.18/AIN5 io       P0.18/A5
+         30       P0.19/AIN6 io       P0.19/SCK
+         31       GND_SHIELD pwr      GND
+         32       NRESET     in       !RESET
+         33       SWDCLK     in       SWCLK
+         34       SWDIO      io       SWDIO
+         35       P0.20/AIN7 io       P0.20/VBAT_MEAS
+         36       GND_SHIELD pwr      GND
+         37       P0.21/TRACECLK io       P0.21/COPI
+         38       P0.22/TRACEDATA0 io       P0.22/CIPO
+         39       P0.23/TRACEDATA1 io       P0.23/RX
+         40       P0.24/TRACEDATA2 io       P0.24/TX
+         41       GND_SHIELD pwr      GND
+         42       P0.25/TRACEDATA3 io       P0.25/VBAT_MEAS_EN
+         43       SIM_RST    io       SIM_RST
+         44       GND_SHIELD pwr      GND
+         45       SIM_DET    io                *** unconnected ***
+         46       SIM_CLK    io       SIM_CLK
+         47       GND_SHIELD pwr      GND
+         48       SIM_IO     io       SIM_IO
+         49       SIM_1V8    pwr      SIM_VCC
+         50       GND_SHIELD pwr      GND
+         52       GND_SHIELD pwr      GND
+         53       MAGPIO2    io                *** unconnected ***
+         54       MAGPIO1    io                *** unconnected ***
+         55       MAGPIO0    io                *** unconnected ***
+         56       GND_SHIELD pwr      GND
+         57       VIO        pwr      VIO
+         58       SCLK       io                *** unconnected ***
+         59       SDATA      io                *** unconnected ***
+         60       GND_SHIELD pwr      GND
+         61       ANT        io       ANT
+         62       GND_SHIELD pwr      GND
+         63       GND_SHIELD pwr      GND
+         64       AUX        out               *** unconnected ***
+         65       GND_SHIELD pwr      GND
+         66       GND_SHIELD pwr      GND
+         67       GPS        in       GPS
+         68       GND_SHIELD pwr      GND
+         69       GND_SHIELD pwr      GND
+         72       GND_SHIELD pwr      GND
+         74       GND_SHIELD pwr      GND
+         75       GND_SHIELD pwr      GND
+         76       GND_SHIELD pwr      GND
+         77       GND_SHIELD pwr      GND
+         78       GND_SHIELD pwr      GND
+         79       GND_SHIELD pwr      GND
+         80       GND_SHIELD pwr      GND
+         81       GND_SHIELD pwr      GND
+         82       GND_SHIELD pwr      GND
+         83       P0.26      io       P0.26/SDA
+         84       P0.27      io       P0.27/SCL
+         85       GND_SHIELD pwr      GND
+         86       P0.28      io       FLASH_SO
+         87       P0.29      io       P0.29/D2
+         88       P0.30      io       P0.30/D3
+         89       P0.31      io       P0.31/NRF_PS_EN
+         90       GND_SHIELD pwr      GND
+         91       COEX2      io                *** unconnected ***
+         92       COEX1      io                *** unconnected ***
+         93       COEX0      io       COEX0/GPS_EN
+         94       GND_SHIELD pwr      GND
+         95       P0.00      io       P0.00/D4
+         96       P0.01      io       P0.01/D5
+         97       P0.02      io       P0.02/D6
+         98       GND_SHIELD pwr      GND
+         99       P0.03      io       P0.03/D7
+         100      P0.04      io       P0.04/D8
+         101      ENABLE     in       N$4
+         102      VDD        pwr      +3V3
+         103_1    VSS        pwr      GND
+         103_2    VSS        pwr      GND
+         103_3    VSS        pwr      GND
+         103_4    VSS        pwr      GND
+         103_5    VSS        pwr      GND
+         103_6    VSS        pwr      GND
+         103_7    VSS        pwr      GND
+         103_8    VSS        pwr      GND
+         103_9    VSS        pwr      GND
+         103_10   VSS        pwr      GND
+         103_11   VSS        pwr      GND
+         103_12   VSS        pwr      GND
+         103_13   VSS        pwr      GND
+         103_14   VSS        pwr      GND
+         103_15   VSS        pwr      GND
+         103_16   VSS        pwr      GND
+         103_17   VSS        pwr      GND
+         103_18   VSS        pwr      GND
+         103_19   VSS        pwr      GND
+         103_20   VSS        pwr      GND
+         103_21   VSS        pwr      GND
+         103_22   VSS        pwr      GND
+         103_23   VSS        pwr      GND
+         103_24   VSS        pwr      GND
+         103_25   VSS        pwr      GND
+         103_26   VSS        pwr      GND
+         103_27   VSS        pwr      GND
+         103_28   VSS        pwr      GND
+         103_29   VSS        pwr      GND
+         103_30   VSS        pwr      GND
+         103_31   VSS        pwr      GND
+         103_32   VSS        pwr      GND
+         103_33   VSS        pwr      GND
+         103_34   VSS        pwr      GND
+         103_35   VSS        pwr      GND
+
+U2       1        GPIO.1/RS485 io                *** unconnected ***
+         2        GPIO.0/CLK io                *** unconnected ***
+         3        GND        pwr      GND
+         4        D+         io       DIFF_P
+         5        D-         io       DIFF_N
+         6        VDD        pwr      CP2102N-VDD
+         7        VREGIN     pwr      VBUS
+         8        VBUS       pwr      N$11
+         9        !RST       in       CP2102N-!RST
+         11       !SUSPEND   out               *** unconnected ***
+         12       GND        pwr      GND
+         13       WAKEUP     in                *** unconnected ***
+         14       SUSPEND    out               *** unconnected ***
+         15       CTS        in                *** unconnected ***
+         16       RTS        out               *** unconnected ***
+         17       RXD        in       P0.06/USB_UART_TX
+         18       TXD        out      P0.05/USB_UART_RX
+         19       GPIO.3/RXT io                *** unconnected ***
+         20       GPIO.2/TXT io                *** unconnected ***
+         21       GND        pwr      GND
+
+U3       A1       FB         in       +3V3
+         A2       VIN        in       VSYS
+         B1       MODE       in       PS_MODE
+         B2       SW         out      PS_SW
+         C1       EN         in       PS_EN
+         C2       GND        pwr      GND
+
+U4       1        VOUT       pwr      LNA_SW_OUT
+         2        GND        pwr      GND
+         4        VIN        pwr      +3V3
+         5        GND        pwr      GND
+         6        EN         in       COEX0/GPS_EN
+
+U5       1        VSS        pwr      GND
+         2        STAT       out      CHRG
+         3        VBAT       io       VBAT
+         4        VDD        pwr      VBUS
+         5        !CE        in                *** unconnected ***
+         6        PROG       io       PROG
+         7        VSS        pwr      GND
+
+U6       1        !CS        io       FLASH_CS
+         2        SO         io       FLASH_SO
+         3        !WP        io       FLASH_WP
+         4        GND        io       GND
+         5        SI         io       FLASH_SI
+         6        SCLK       io       FLASH_SCK
+         7        !HOLD      io       FLASH_HOLD
+         8        VCC        io       +3V3
+
+U8       1        OSCI       in       N$10
+         2        OSCO       out      N$18
+         3        CLKOE      in       GND
+         4        !INT       out      RTC_INT
+         5        VSS        pwr      GND
+         6        SDA        io       P0.26/SDA
+         7        SCL        in       P0.27/SCL
+         9        CLKOUT     out               *** unconnected ***
+         10       VDD        pwr      VSYS
+         11       VSS        pwr      GND
+
+U9       1        A1         pas      NRF_PS_EN_JMP
+         2        A2         pas      VBUS
+         3        C          pas      PS_EN_CC
+         4        A1         pas      MODE/WAKE
+         5        A2         pas      RTC_PS_EN
+         6        C          pas      PS_EN_CC
+
+U10      1        SCL/SPC    io       P0.27/SCL
+         2        CS         in       N$3
+         3        SDO/SAO    io       GND
+         4        SDA/SDI/SDO io       P0.26/SDA
+         5        RES        pwr      GND
+         6        GND        pwr      GND
+         7        GND        pwr      GND
+         8        GND        pwr      GND
+         9        VDD        pwr      +3V3
+         10       VDD_IO     pwr      +3V3
+         11       INT2       out      LIS2DH_INT2
+         12       INT1       out      LIS2DH_INT1
+
+Y1       1        1          pas      N$18
+         2        2          pas      N$10
+

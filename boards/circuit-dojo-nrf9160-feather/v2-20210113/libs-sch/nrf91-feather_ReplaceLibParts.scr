@@ -1,0 +1,245 @@
+# 'EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.;
+
+SET UNDO_LOG OFF;
+# Take all libraries out of use
+USE -*;
+#
+# SHEET 1 - MIGRATE PARTS
+#
+EDIT .s1
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr';
+REPLACE FRAME1 FRAME_B_L;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr';
+REPLACE +3V1 +3V3;
+REPLACE +3V2 +3V3;
+REPLACE +3V10 +3V3;
+REPLACE GND3 GND;
+REPLACE GND4 GND;
+REPLACE GND5 GND;
+REPLACE GND6 GND;
+REPLACE GND8 GND;
+REPLACE GND10 GND;
+REPLACE GND16 GND;
+REPLACE GND18 GND;
+REPLACE GND19 GND;
+REPLACE GND20 GND;
+REPLACE GND21 GND;
+REPLACE GND22 GND;
+REPLACE GND23 GND;
+REPLACE GND28 GND;
+REPLACE GND29 GND;
+REPLACE GND30 GND;
+REPLACE GND32 GND;
+REPLACE GND33 GND;
+REPLACE GND34 GND;
+REPLACE GND35 GND;
+REPLACE GND36 GND;
+REPLACE GND37 GND;
+REPLACE GND40 GND;
+REPLACE GND46 GND;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr';
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr';
+REPLACE ASSEMBLY1 ASSY-COST-NRF91-FEATHER;
+REPLACE C4 CAP-10U-6.3V-0603;
+REPLACE C5 CAP-10U-6.3V-0603;
+REPLACE C6 CAP-0.1U-50V-0402;
+REPLACE C7 CAP-10U-6.3V-0603;
+REPLACE C11 CAP-1U-25V-1-0402;
+REPLACE C13 CAP-4.7U-6.3V-2-0603;
+REPLACE C14 CAP-0.1U-50V-0402;
+REPLACE C15 CAP-4.7U-6.3V-2-0603;
+REPLACE C16 CAP-0.1U-50V-0402;
+REPLACE D1 DIO-SCHOTTKY-3A-01;
+REPLACE D2 DIO-SCHOTTKY-3A-01;
+REPLACE D4 LED-ORANGE-0402;
+REPLACE FRAME2 DOCFIELD;
+REPLACE J1 CON-USB-1050170001;
+REPLACE J2 CON-HEADER-1X12-MALE-PIN;
+REPLACE J3 CON-HEADER-1X16-MALE-PIN;
+REPLACE J6 CON-S2B-PH-SM4-TB(LF)(SN);
+REPLACE JMP2 JUMPER-3/1;
+REPLACE L2 IND-1.5U-1.5A-2X2;
+REPLACE P+1 VBUS;
+REPLACE P+2 VBUS;
+REPLACE P+3 VCC_5V0;
+REPLACE P+4 VSYS;
+REPLACE P+5 VSYS;
+REPLACE P+6 VBAT;
+REPLACE P+7 VCC_5V0;
+REPLACE P+8 VBUS;
+REPLACE P+12 VBAT;
+REPLACE P+13 VBUS;
+REPLACE P+14 VBAT;
+REPLACE P+15 VBAT;
+REPLACE P+16 VBUS;
+REPLACE P+18 VBUS;
+REPLACE P+19 VBUS;
+REPLACE P+20 VBUS;
+REPLACE P+21 VSYS;
+REPLACE P+28 VSYS;
+REPLACE P+29 VBAT;
+REPLACE PCB1 PCB-NRF91-FEATHER;
+REPLACE Q2 MOSFET-DUAL-COMP-SOT563;
+REPLACE Q3 MOSFET-P-20V-4.7A-SOT23;
+REPLACE Q5 MOSFET-N-SC89;
+REPLACE R2 RES-1M-5%-0402;
+REPLACE R3 RES-100K-1%-0402;
+REPLACE R4 RES-1K-5%-0402;
+REPLACE R5 RES-100K-1%-0402;
+REPLACE R7 RES-100K-1%-0402;
+REPLACE R8 RES-100K-1%-0402;
+REPLACE R10 RES-100K-1%-0402;
+REPLACE R12 RES-3.4K-1%-0402;
+REPLACE R14 RES-330-5%-0402;
+REPLACE R15 RES-22.1K-1%-0402;
+REPLACE R16 RES-47.5K-1%-0402;
+REPLACE R19 RES-1M-5%-0402;
+REPLACE SOLDER1 SOLDER-PASTE-ROOM-TEMP-50G;
+REPLACE U$3 FIDUCIAL-1MM;
+REPLACE U$4 FIDUCIAL-1MM;
+REPLACE U$31 MOUNTING-HOLE-2.5MM-PLATED;
+REPLACE U$32 MOUNTING-HOLE-2.5MM-PLATED;
+REPLACE U$34 FIDUCIAL-1MM;
+REPLACE U$35 FIDUCIAL-1MM;
+REPLACE U2 IC-CP2102N-A02-GQFN20R;
+REPLACE U3 IC-TPS63031DSKR;
+REPLACE U5 IC-TPD4S012DRYR;
+REPLACE U7 IC-STBC08PMR;
+REPLACE U9 IC-BAV70S;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr';
+#
+# SHEET 2 - MIGRATE PARTS
+#
+EDIT .s2
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr';
+REPLACE FRAME3 FRAME_B_L;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr';
+REPLACE +3V3 +3V3;
+REPLACE +3V5 +3V3;
+REPLACE +3V6 +3V3;
+REPLACE +3V7 +3V3;
+REPLACE +3V8 +3V3;
+REPLACE +3V11 +3V3;
+REPLACE GND1 GND;
+REPLACE GND2 GND;
+REPLACE GND7 GND;
+REPLACE GND9 GND;
+REPLACE GND11 GND;
+REPLACE GND12 GND;
+REPLACE GND13 GND;
+REPLACE GND14 GND;
+REPLACE GND15 GND;
+REPLACE GND17 GND;
+REPLACE GND24 GND;
+REPLACE GND25 GND;
+REPLACE GND26 GND;
+REPLACE GND27 GND;
+REPLACE GND31 GND;
+REPLACE GND38 GND;
+REPLACE GND43 GND;
+REPLACE GND45 GND;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr';
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr';
+REPLACE C1 CAP-15P-50V-0402;
+REPLACE C2 CAP-15P-50V-0402;
+REPLACE C3 CAP-4.7U-6.3V-2-0603;
+REPLACE C8 CAP-4.7U-6.3V-2-0603;
+REPLACE C9 CAP-47U-6.3V-0805;
+REPLACE C10 CAP-4.7U-6.3V-2-0603;
+REPLACE C12 CAP-56PF-50V-1-0402;
+REPLACE C19 CAP-56PF-50V-1-0402;
+REPLACE D3 LED-BLUE-0402;
+REPLACE FRAME4 DOCFIELD;
+REPLACE J4 CON-1909763-1;
+REPLACE J5 CON-SIM-104224-0820;
+REPLACE J7 CON-1909763-1;
+REPLACE J9 CON-TC2030-MCP-NL;
+REPLACE L1 IND-39NH-250MA-0402;
+REPLACE L4 IND-68NH-200MA-0402;
+REPLACE P+17 VSYS;
+REPLACE Q4 MOSFET-N-SC89;
+REPLACE R1 RES-100K-1%-0402;
+REPLACE R9 RES-1M-5%-0402;
+REPLACE R11 RES-330-5%-0402;
+REPLACE R13 RES-100K-1%-0402;
+REPLACE SW1 SW-EVP-AA402W;
+REPLACE SW2 SW-EVP-AA402W;
+REPLACE TP1 TP-1SIDE-1P0;
+REPLACE TP2 TP-1SIDE-1P0;
+REPLACE U1 MOD-NRF9160-SICA-R;
+REPLACE U4 POWER-SWITCH-MIC94092YC6;
+REPLACE U6 FLASH-W25Q32JVZPIQ-WSON;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr';
+#
+# SHEET 3 - MIGRATE PARTS
+#
+EDIT .s3
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr';
+REPLACE FRAME5 FRAME_B_L;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/frames.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr';
+REPLACE +3V4 +3V3;
+REPLACE +3V9 +3V3;
+REPLACE +3V12 +3V3;
+REPLACE +3V13 +3V3;
+REPLACE GND41 GND;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply1.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr';
+REPLACE SUPPLY1 GND:1;
+REPLACE SUPPLY2 GND:1;
+REPLACE SUPPLY3 GND:1;
+REPLACE SUPPLY4 GND:1;
+REPLACE SUPPLY5 GND:1;
+REPLACE SUPPLY6 GND:1;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/supply2.lbr';
+# Migrate parts to '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr'
+USE '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr';
+REPLACE C17 CAP-0.1U-50V-0402;
+REPLACE C18 CAP-0.1U-50V-0402;
+REPLACE FRAME6 DOCFIELD;
+REPLACE JMP1 JUMPER-NC;
+REPLACE P+9 VSYS;
+REPLACE P+10 VSYS;
+REPLACE P+11 VSYS;
+REPLACE Q1 MOSFET-P-SC89;
+REPLACE R6 RES-100K-1%-0402;
+REPLACE R17 RES-20K-1%-0402;
+REPLACE R18 RES-20K-1%-0402;
+REPLACE R20 RES-100K-1%-0402;
+REPLACE U8 IC-PCF85063ATL/1;
+REPLACE U10 IC-LIS2DH12TR;
+REPLACE Y1 XTAL-ABS07AIG-32.768KHZ-7-T;
+# Take '/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr' out of use
+USE '-/media/slz/lpndevel/devel/TIAC/circuitdojo/nrf9160-feather/wolff-den.lbr';
+EDIT .s1
+SET UNDO_LOG ON;
+# Put all libraries back into use
+USE *;

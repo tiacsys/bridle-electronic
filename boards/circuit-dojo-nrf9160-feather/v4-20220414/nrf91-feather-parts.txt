@@ -1,0 +1,89 @@
+Partlist
+
+Exported from nrf91-feather.sch at 20.10.22 14:02
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value                       Device                      Package                    Library   Sheet
+
+C1       15p                         CAP-15P-50V-0402            CAPC1005X55N               wolff-den 2
+C2       15p                         CAP-15P-50V-0402            CAPC1005X55N               wolff-den 2
+C3       4.7u                        CAP-4.7U-6.3V-2-0603        C0603                      wolff-den 2
+C4       2.2u                        CAP-2.2U-10V-01-0603        C0603                      wolff-den 1
+C7       2.2u                        CAP-2.2U-10V-01-0603        C0603                      wolff-den 1
+C8       4.7u                        CAP-4.7U-6.3V-2-0603        C0603                      wolff-den 2
+C9       47u                         CAP-47U-6.3V-0805           C0805                      wolff-den 2
+C10      4.7u                        CAP-4.7U-6.3V-2-0603        C0603                      wolff-den 2
+C11      1u                          CAP-1U-25V-1-0402           CAPC1005X55N               wolff-den 1
+C12      56p                         CAP-56PF-50V-1-0402         CAPC1005X55N               wolff-den 2
+C13      4.7u                        CAP-4.7U-6.3V-2-0603        C0603                      wolff-den 1
+C14      0.1u                        CAP-0.1U-50V-0402           CAPC1005X55N               wolff-den 1
+C15      4.7u                        CAP-4.7U-6.3V-2-0603        C0603                      wolff-den 1
+C16      0.1u                        CAP-0.1U-50V-0402           CAPC1005X55N               wolff-den 1
+C17      0.1u                        CAP-0.1U-50V-0402           CAPC1005X55N               wolff-den 3
+C18      0.1u                        CAP-0.1U-50V-0402           CAPC1005X55N               wolff-den 3
+C19      56p                         CAP-56PF-50V-1-0402         CAPC1005X55N               wolff-den 2
+D1       DIO-SCHOTTKY-1A-SMA-MICRO   DIO-SCHOTTKY-1A-SMA-MICRO   SMA-MICRO                  wolff-den 1
+D2       DIO-SCHOTTKY-1A-SMA-MICRO   DIO-SCHOTTKY-1A-SMA-MICRO   SMA-MICRO                  wolff-den 1
+D3       LED-BLUE-0402               LED-BLUE-0402               LED_EAST1005               wolff-den 2
+D4       LED-ORANGE-0402             LED-ORANGE-0402             LED_EAST1005               wolff-den 1
+J2       CON-HEADER-1X12-MALE-PIN    CON-HEADER-1X12-MALE-PIN    CON-HEADER-1X12-MALE-PIN   wolff-den 1
+J3       CON-HEADER-1X16-MALE-PIN    CON-HEADER-1X16-MALE-PIN    CON-HEADER-1X16-MALE-PIN   wolff-den 1
+J4       CON-1909763-1               CON-1909763-1               TE_1909763-1               wolff-den 2
+J5       CON-SIM-104224-0820         CON-SIM-104224-0820         MOLEX_104224-0820          wolff-den 2
+J6       CON-S2B-PH-SM4-TB(LF)(SN)   CON-S2B-PH-SM4-TB(LF)(SN)   JST_S2B-PH-SM4-TB(LF)(SN)  wolff-den 1
+J7       CON-1909763-1               CON-1909763-1               TE_1909763-1               wolff-den 2
+J8       CON-USB-DX07S016JA1R1500    CON-USB-DX07S016JA1R1500    JAE_DX07S016JA1R1500       wolff-den 1
+J9       CON-TC2030-MCP-NL           CON-TC2030-MCP-NL           TC2030-MCP-NL              wolff-den 2
+JMP1     JUMPER-NC                   JUMPER-NC                   JUMPER-ROUND-NC            wolff-den 3
+JMP2     JUMPER-3/1                  JUMPER-3/1                  JUMPER-ROUND-3-NO-R        wolff-den 1
+JMP3     JUMPER-NO-ROUND-NO          JUMPER-NO-ROUND-NO          JUMPER-ROUND-N0            wolff-den 3
+JMP4     JUMPER-NC                   JUMPER-NC                   JUMPER-ROUND-NC            wolff-den 1
+L1       39n                         IND-39NH-250MA-0402         IND0402_22N_TAI            wolff-den 2
+L2       470nH                       IND-3.1A-60MOHM-0805        INDC2012X100N              wolff-den 1
+L4       68n                         IND-68NH-200MA-0402         IND0402_22N_TAI            wolff-den 2
+Q1       MOSFET-P-SC89               MOSFET-P-SC89               DIO_RB558WMF-L             wolff-den 3
+Q2       MOSFET-DUAL-COMP-SOT563     MOSFET-DUAL-COMP-SOT563     SOT50P160X60-6N            wolff-den 1
+Q3       MOSFET-P-20V-4.7A-SOT23     MOSFET-P-20V-4.7A-SOT23     SOT23                      wolff-den 1
+Q4       MOSFET-N-SC89               MOSFET-N-SC89               DIO_RB558WMF-L             wolff-den 2
+Q5       MOSFET-N-SC89               MOSFET-N-SC89               DIO_RB558WMF-L             wolff-den 1
+R1       100k                        RES-100K-1%-0402            R0402-M                    wolff-den 2
+R2       1M                          RES-1M-5%-0402              R0402-M                    wolff-den 1
+R3       100k                        RES-100K-1%-0402            R0402-M                    wolff-den 1
+R4       1k                          RES-1K-5%-0402              R0402-M                    wolff-den 1
+R5       100k                        RES-100K-1%-0402            R0402-M                    wolff-den 1
+R6       100k                        RES-100K-1%-0402            R0402-M                    wolff-den 3
+R7       1M                          RES-1M-5%-0402              R0402-M                    wolff-den 1
+R8       100k                        RES-100K-1%-0402            R0402-M                    wolff-den 1
+R9       1M                          RES-1M-5%-0402              R0402-M                    wolff-den 2
+R10      100k                        RES-100K-1%-0402            R0402-M                    wolff-den 1
+R11      330                         RES-330-5%-0402             R0402-M                    wolff-den 2
+R12      3.4k                        RES-3.4K-1%-0402            R0402-M                    wolff-den 1
+R13      100k                        RES-100K-1%-0402            R0402-M                    wolff-den 2
+R14      1k                          RES-1K-5%-0402              R0402-M                    wolff-den 1
+R15      22.1k                       RES-22.1K-1%-0402           R0402-M                    wolff-den 1
+R16      47.5k                       RES-47.5K-1%-0402           R0402-M                    wolff-den 1
+R17      20k                         RES-20K-1%-0402             R0402-M                    wolff-den 3
+R18      20k                         RES-20K-1%-0402             R0402-M                    wolff-den 3
+R19      1M                          RES-1M-5%-0402              R0402-M                    wolff-den 1
+R20      100k                        RES-100K-1%-0402            R0402-M                    wolff-den 3
+SW1      SW-EVP-AA402W               SW-EVP-AA402W               SW-EVP-AA402W              wolff-den 2
+SW2      SW-EVP-AA402W               SW-EVP-AA402W               SW-EVP-AA402W              wolff-den 2
+TP1      TP-1SIDE-1P0                TP-1SIDE-1P0                TP-1P0                     wolff-den 2
+TP2      TP-1SIDE-1P0                TP-1SIDE-1P0                TP-1P0                     wolff-den 2
+TP3      TP-1SIDE-1P0                TP-1SIDE-1P0                TP-1P0                     wolff-den 2
+TP4      TP-1SIDE-1P0                TP-1SIDE-1P0                TP-1P0                     wolff-den 2
+TP5      TP-1SIDE-1P0                TP-1SIDE-1P0                TP-1P0                     wolff-den 2
+TP6      TP-1SIDE-1P0                TP-1SIDE-1P0                TP-1P0                     wolff-den 2
+U1       MOD-NRF9160-SICA-R          MOD-NRF9160-SICA-R          NORDIC_NRF9160-SICA-R      wolff-den 2
+U2       IC-CP2102N-A02-GQFN20R      IC-CP2102N-A02-GQFN20R      SILABS_CP2102N-A02-GQFN20R wolff-den 1
+U3       IC-LM3281YFQR               IC-LM3281YFQR               BGA6N40P2X3_116X143X67N    wolff-den 1
+U4       POWER-SWITCH-MIC94092YC6    POWER-SWITCH-MIC94092YC6    SOT363                     wolff-den 2
+U5       IC-MCP73830T                IC-MCP73830T                DFN6_2X2MY_MCH             wolff-den 1
+U6       FLASH-W25Q32JVZPIQ-WSON     FLASH-W25Q32JVZPIQ-WSON     WIN_ZP-8-L                 wolff-den 2
+U8       IC-PCF85063ATL/1            IC-PCF85063ATL/1            DFN10_2P7X2P7-L            wolff-den 3
+U9       IC-BAV70S                   IC-BAV70S                   SOT363                     wolff-den 1
+U10      IC-LIS2DH12TR               IC-LIS2DH12TR               PQFN50P200X200100-12N      wolff-den 3
+Y1       XTAL-ABS07AIG-32.768KHZ-7-T XTAL-ABS07AIG-32.768KHZ-7-T XTAL320X150X90             wolff-den 3
