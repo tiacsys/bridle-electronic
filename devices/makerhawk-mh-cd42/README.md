@@ -1,7 +1,7 @@
 # MH-CD42 – Battery Charging Board 5V/1.5A (25x16x4)
 
 <div style="display:flex;justify-content:right;">
-<small><em>project update on: <strong>$Format:%cs$ with <mark>$Format:%h$</mark></strong></em></small>
+<small><em>project update on: <strong>$Format:%cs$ with <mark><a href="https://github.com/tiacsys/bridle-electronic/commits/$Format:%h$" title="$Format:%B$" target="_blank">$Format:%h$</a></mark></strong></em></small>
 </div>
 <div style="display:flex;justify-content:right;">
 <small><em>all data checked on <strong>2022-10-16</strong></em></small>
