@@ -1,0 +1,257 @@
+Pinlist
+
+Exported from xiao-rp2040.sch at 22.10.22 19:35
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Part     Pad      Pin        Dir      Net
+
+BOOT     1        1          io       RP2040_BOOT
+         2        2          io       GND
+
+C2       1        1          pas      RUN
+         2        2          pas      GND
+
+C3       1        1          pas      3V3
+         2        2          pas      GND
+
+C5       1        1          pas      GND
+         2        2          pas      VIN
+
+C6       1        1          pas      GND
+         2        2          pas      3V3
+
+C7       1        1          pas      3V3
+         2        2          pas      GND
+
+C10      1        1          pas      3V3
+         2        2          pas      GND
+
+C15      1        1          pas      1V1
+         2        2          pas      GND
+
+C16      1        1          pas      1V1
+         2        2          pas      GND
+
+C18      1        1          pas      1V1
+         2        2          pas      GND
+
+C19      1        1          pas      GND
+         2        2          pas      XIN
+
+C20      1        1          pas      N$8
+         2        2          pas      GND
+
+C21      1        1          pas      GND
+         2        2          pas      3V3
+
+D1       1        2          io       VBUS
+         2        1          io       GND
+
+D2       A        A          pas      VBUS
+         C        C          pas      VIN
+
+D8       1        2          io       USB_D+
+         2        1          io       GND
+
+D9       1        2          io       USB_D-
+         2        1          io       GND
+
+GND      1        T          io       GND
+
+J1       1        1          io       GND
+         2        2          io       GND
+         3        3          io       GND
+         4        4          io       GND
+         5        5          io       GND
+         6        6          io       GND
+         7        7          io       GND
+         8        8          io       GND
+
+J2       1        1          io       A0
+         2        2          io       A1
+         3        3          io       A2
+         4        4          io       A3
+         5        5          io       SDA
+         6        6          io       SCL
+         7        7          io       TX
+         13       1          io       A0
+         14       2          io       A1
+         15       3          io       A2
+         16       4          io       A3
+         17       5          io       SDA
+         18       6          io       SCL
+         19       7          io       TX
+
+J4       1        1          io       RX
+         2        2          io       SCK
+         3        3          io       MISO
+         4        4          io       MOSI
+         5        5          io       3V3
+         6        6          io       GND
+         7        7          io       VBUS
+         13       1          io       RX
+         14       2          io       SCK
+         15       3          io       MISO
+         16       4          io       MOSI
+         17       5          io       3V3
+         18       6          io       GND
+         19       7          io       VBUS
+
+PWR      +        +          pas      N$16
+         -        -          pas      GND
+
+R1       1        1          pas      N$1
+         2        2          pas      GND
+
+R2       1        1          pas      GND
+         2        2          pas      N$2
+
+R3       1        1          pas      N$3
+         2        2          pas      IO25_RGB-B
+
+R4       1        1          pas      N$6
+         2        2          pas      IO17_RGB-R
+
+R5       1        1          pas      3V3
+         2        2          pas      RUN
+
+R6       1        1          pas      3V3
+         2        2          pas      N$16
+
+R7       1        1          pas      N$4
+         2        2          pas      IO16_RGB-G
+
+R14      1        1          pas      RP2040_BOOT
+         2        2          pas      QSPI_CSN
+
+R22      1        1          pas      USB_DM
+         2        2          pas      USB_D-
+
+R23      1        1          pas      USB_DP
+         2        2          pas      USB_D+
+
+R24      1        1          pas      N$8
+         2        2          pas      XOUT
+
+RESET    1        1          io       RUN
+         2        2          io       GND
+
+RGB1     1        DOUT       io                *** unconnected ***
+         2        VSS        io       GND
+         3        DIN        io       NEOPIX
+         4        VCC        io       NEO_PWR
+
+RGB2     +        +          io       3V3
+         B-       B-         io       N$3
+         G-       G-         io       N$4
+         R-       R-         io       N$6
+
+TP1      T        T          io       RUN
+
+TP3      T        T          io       SWDCLK
+
+TP5      T        T          io       SWDIO
+
+TP6      T        T          io       GND
+
+U3       1        CS         io       QSPI_CSN
+         2        SO         io       QSPI_SIO_1
+         3        WP         io       QSPI_SIO_2
+         4        VSS        io       GND
+         5        SI         io       QSPI_SIO_0
+         6        SCLK       io       QSPI_SCK
+         7        HOLD       io       QSPI_SIO_3
+         8        VCC        io       3V3
+         9        GND        io       GND
+
+U4       1        VOUT       io       3V3
+         2        GND        io       GND
+         3        CE         io       VIN
+         4        VIN        io       VIN
+         5        EP         io       GND
+
+U6       1        IOVDD      io       3V3
+         2        GPIO0      io       TX
+         3        GPIO1      io       RX
+         4        GPIO2      io       SCK
+         5        GPIO3      io       MOSI
+         6        GPIO4      io       MISO
+         7        GPIO5      io                *** unconnected ***
+         8        GPIO6      io       SDA
+         9        GPIO7      io       SCL
+         10       IOVDD      io       3V3
+         11       GPIO8      io                *** unconnected ***
+         12       GPIO9      io                *** unconnected ***
+         13       GPIO10     io                *** unconnected ***
+         14       GPIO11     io       NEO_PWR
+         15       GPIO12     io       NEOPIX
+         16       GPIO13     io                *** unconnected ***
+         17       GPIO14     io                *** unconnected ***
+         18       GPIO15     io                *** unconnected ***
+         19       TESTEN     io       GND
+         20       XIN        io       XIN
+         21       XOUT       io       XOUT
+         22       IOVDD      io       3V3
+         23       DVDD       io       1V1
+         24       SWCLK      io       SWDCLK
+         25       SWDIO      io       SWDIO
+         26       RUN        io       RUN
+         27       GPIO16     io       IO16_RGB-G
+         28       GPIO17     io       IO17_RGB-R
+         29       GPIO18     io                *** unconnected ***
+         30       GPIO19     io                *** unconnected ***
+         31       GPIO20     io                *** unconnected ***
+         32       GPIO21     io                *** unconnected ***
+         33       IOVDD      io       3V3
+         34       GPIO22     io                *** unconnected ***
+         35       GPIO23     io                *** unconnected ***
+         36       GPIO24     io                *** unconnected ***
+         37       GPIO25     io       IO25_RGB-B
+         38       GPIO26/ADC0 io       A0
+         39       GPIO27/ADC1 io       A1
+         40       GPIO28/ADC2 io       A2
+         41       GPIO29/ADC3 io       A3
+         42       IOVDD      io       3V3
+         43       ADC_IOVDD  io       3V3
+         44       VREG_IOVDD io       3V3
+         45       VREG_VOUT  io       1V1
+         46       USB_DM     io       USB_DM
+         47       USB_DP     io       USB_DP
+         48       USB_IOVDD  io       3V3
+         49       IOVDD      io       3V3
+         50       DVDD       io       1V1
+         51       QSPI_SD3   io       QSPI_SIO_3
+         52       QSPI_SCLK  io       QSPI_SCK
+         53       QSPI_SDO   io       QSPI_SIO_0
+         54       QSPI_SD2   io       QSPI_SIO_2
+         55       QSPI_SD1   io       QSPI_SIO_1
+         56       QSPI_CS    io       QSPI_CSN
+         57       GND        io       GND
+
+USB1     A5       A5/CC1     io       N$1
+         A6       A6/DP1     io       USB_D+
+         A7       A7/DN1     io       USB_D-
+         A8       A8/SBU1    io                *** unconnected ***
+         B5       B5/CC2     io       N$2
+         B6       B6/DP2     io       USB_D+
+         B7       B7/DN2     io       USB_D-
+         B8       B8/SBU2    io                *** unconnected ***
+         S1       S1         io       GND
+         S2       S2         io       GND
+         S3       S3         io       GND
+         S4       S4         io       GND
+         S5       S1         io       GND
+         S6       S2         io       GND
+         A4_B9    A4/B9/VBUS io       VBUS
+         B4_A9    B4/A9/VBUS io       VBUS
+         A1_B12   A1/B12/GND io       GND
+         B1_A12   B1/A12/GND io       GND
+
+VIN      1        T          io       VIN
+
+X3       1        1          io       XIN
+         2        2          io       GND
+         3        3          io       N$8
+         4        4          io       GND
+
