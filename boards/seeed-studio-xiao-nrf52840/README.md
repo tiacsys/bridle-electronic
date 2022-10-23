@@ -55,10 +55,13 @@ which can receive audio data in real-time and can be used for audio recognition.
 **UPC**:  ############<br/>
 **SKU**: 102010448 / 102010469 *(sense version)*
 
-**HSCODE**:   8543709990<br/>
-**EUHSCODE**: 8543709099<br/>
-**USHSCODE**: 8471490000<br/>
+**HSCODE**:   [8543.70.90.99]<br/>
+**EUHSCODE**: [8543.70.90.99]<br/>
+**USHSCODE**: [8471.49.00.00]<br/>
 **COO**: CHINA
+
+[8543.70.90.99]: https://www.tariffnumber.com/2022/85437090 "HS Code 85437090 – Electrical, machines, apparatus – Other"
+[8471.49.00.00]: https://www.tariffnumber.com/2022/84714900 "HS Code 84714900 - Data, processing, machines – Other, presented in the form of systems"
 
 *Brand*: Seeed<br/>
 *Part number*: 102010448 / 102010469 *(sense version)*

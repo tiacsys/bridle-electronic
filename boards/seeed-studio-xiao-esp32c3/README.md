@@ -40,10 +40,13 @@ in a 20 x 17.5 mm package with castellated pins.
 **UPC**:  ############<br/>
 **SKU**: 113991054
 
-**HSCODE**:   8543709990<br/>
-**EUHSCODE**: 8543709099<br/>
-**USHSCODE**: 8471490000<br/>
+**HSCODE**:   [8543.70.90.99]<br/>
+**EUHSCODE**: [8543.70.90.99]<br/>
+**USHSCODE**: [8471.49.00.00]<br/>
 **COO**: CHINA
+
+[8543.70.90.99]: https://www.tariffnumber.com/2022/85437090 "HS Code 85437090 – Electrical, machines, apparatus – Other"
+[8471.49.00.00]: https://www.tariffnumber.com/2022/84714900 "HS Code 84714900 - Data, processing, machines – Other, presented in the form of systems"
 
 *Brand*: Seeed<br/>
 *Part number*: 113991054
