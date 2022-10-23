@@ -52,17 +52,16 @@ which can receive audio data in real-time and can be used for audio recognition.
 ## References
 
 **EAN**: #############<br/>
-**SKU**: 102010448<br/>
-**SKU**: 102010469 *(sense version)*
+**UPC**:  ############<br/>
+**SKU**: 102010448 / 102010469 *(sense version)*
 
 **HSCODE**:   8543709990<br/>
 **EUHSCODE**: 8543709099<br/>
 **USHSCODE**: 8471490000<br/>
-**UPC**: <br/>
 **COO**: CHINA
 
 *Brand*: Seeed<br/>
-*Part number*: 102010428 / 102010469 *(sense version)*
+*Part number*: 102010448 / 102010469 *(sense version)*
 
 * *HTML(2022-10-22)*: [Product Page] – *$9,90 (excl. VAT)*
 * *HTML(2022-10-22)*: [Product Page (Sense)] – *$15,99 (excl. VAT)*

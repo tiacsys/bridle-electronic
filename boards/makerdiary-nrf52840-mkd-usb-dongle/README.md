@@ -41,18 +41,17 @@ case with final product dimensions 50.8 x 21.1 x 7.6 mm³.
 
 ## References
 
-**EAN**: #############<br/>
-**SKU**: 102010448<br/>
-**SKU**: 102010469 *(pcba version)*
+**EAN**: 0690124568540, 0841454121497, 8411356630995, 8809017514485<br/>
+**UPC**:  690124568540,  841454121497<br/>
+**SKU**: 113990714 / 102080028 *(pcba version)*
 
 **HSCODE**:   8543709990<br/>
 **EUHSCODE**: 8543709099<br/>
 **USHSCODE**: 8471490000<br/>
-**UPC**:      841454121497<br/>
 **COO**: CHINA
 
 *Brand*: Seeed<br/>
-*Part number*: 102010428 / 102010469 *(pcba version)*
+*Part number*: 113990714 / 102080028 *(pcba version)*
 
 * *HTML(2022-10-23)*: [Product Page] – *$19,90 (excl. VAT)*
 * *HTML(2022-10-23)*: [Product Page (PCBA)] – *$12,99 (excl. VAT)*

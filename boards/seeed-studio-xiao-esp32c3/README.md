@@ -37,12 +37,12 @@ in a 20 x 17.5 mm package with castellated pins.
 ## References
 
 **EAN**: #############<br/>
+**UPC**:  ############<br/>
 **SKU**: 113991054
 
 **HSCODE**:   8543709990<br/>
 **EUHSCODE**: 8543709099<br/>
 **USHSCODE**: 8471490000<br/>
-**UPC**: <br/>
 **COO**: CHINA
 
 *Brand*: Seeed<br/>

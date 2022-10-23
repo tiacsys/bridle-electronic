@@ -36,7 +36,7 @@ Lithium-Ion batteries. The four status LEDs show the current charging level.
 ## References
 
 **EAN**: 0192684495705<br/>
-**UPC**: 192684495705
+**UPC**:  192684495705
 
 *Brand*: MakerHawk<br/>
 *Part number*: L1124EL341RYOW

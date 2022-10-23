@@ -31,9 +31,8 @@ designed in a tiny size with in a 20 x 17.5 mm package with castellated pins.
 
 ## References
 
-**EAN**: 4060137062438<br/>
-**EAN**: 0886268932303<br/>
-**EAN**: 4251850501841<br/>
+**EAN**: 0886268932303, 4060137062438, 4251850501841<br/>
+**UPC**:  886268932303<br/>
 **SKU**: 102010328
 
 *Brand*: Seeed<br/>
