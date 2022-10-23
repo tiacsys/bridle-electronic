@@ -1,0 +1,343 @@
+Netlist
+
+Exported from xiao-nrf52840.sch at 23.10.22 09:58
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Net                  Part     Pad      Pin        Sheet
+
+/CE                  R20      1        1          1
+                     U2       B1       TS         1
+
+3V3                  C29      2        2          1
+                     C3       2        2          1
+                     C39      1        1          1
+                     C41      2        2          1
+                     C6       2        2          1
+                     J1       17       5          1
+                     J1       5        5          1
+                     R13      1        1          1
+                     R5       1        1          1
+                     RGB6     +        +          1
+                     U1       A22      VDD        1
+                     U1       AD14     VDD        1
+                     U1       AD23     VDD        1
+                     U1       B1       VDD        1
+                     U1       W1       VDD        1
+                     U1       Y2       VDDH       1
+                     U6       1        OUT        1
+                     U7       8        VCC        1
+
+6D_INT1              U1       T2       P0.11      1
+                     U3       4        INT1       1
+
+6D_PWR               C1       2        2          1
+                     R14      1        1          1
+                     R15      1        1          1
+                     U1       P2       P1.08      1
+                     U3       12       CS         1
+                     U3       5        VDDIO      1
+                     U3       8        VDD        1
+
+DEC4-6               C34      1        1          1
+                     C42      1        1          1
+                     L3       2        2          1
+                     U1       B5       DEC4       1
+                     U1       E24      DEC6       1
+
+GND                  ANT1     2        GND        1
+                     C1       1        1          1
+                     C10      2        2          1
+                     C2       1        1          1
+                     C22      1        1          1
+                     C24      1        1          1
+                     C25      1        1          1
+                     C29      1        1          1
+                     C3       1        1          1
+                     C30      2        2          1
+                     C31      2        2          1
+                     C32      2        2          1
+                     C33      2        2          1
+                     C34      2        2          1
+                     C35      2        2          1
+                     C36      1        1          1
+                     C37      1        1          1
+                     C39      2        2          1
+                     C4       2        2          1
+                     C40      2        2          1
+                     C41      1        1          1
+                     C42      2        2          1
+                     C5       2        2          1
+                     C6       1        1          1
+                     C7       1        1          1
+                     C8       1        1          1
+                     C9       1        1          1
+                     GND      1        T          1
+                     J1       18       6          1
+                     J1       6        6          1
+                     K1       2        B0         1
+                     K1       4        B1         1
+                     MIC1     4        GND        1
+                     MIC1     5        L/R        1
+                     MIC1     6        GND        1
+                     R1       2        2          1
+                     R18      2        2          1
+                     R2       1        1          1
+                     R20      2        2          1
+                     R8       2        2          1
+                     R9       1        1          1
+                     TP1      T        T          1
+                     U1       B7       VSS        1
+                     U1       F23      VSS_PA     1
+                     U1       G74      VSS_PAD    1
+                     U2       C2       VSS        1
+                     U3       1        SDO/DA0    1
+                     U3       2        SDX        1
+                     U3       3        SCX        1
+                     U3       6        GND        1
+                     U3       7        GND        1
+                     U6       2        GND        1
+                     U6       T        GND        1
+                     U7       4        GND        1
+                     U7       PAD      T          1
+                     USB1     A1_B12   A1/B12/GND 1
+                     USB1     B1_A12   B1/A12/GND 1
+                     USB1     S1       S1         1
+                     USB1     S2       S2         1
+                     USB1     S3       S3         1
+                     USB1     S4       S4         1
+                     USB1     S5       S1         1
+                     USB1     S6       S2         1
+                     X2       2        1          1
+                     X2       4        3          1
+
+INTERNAL_I2C_SCL     R14      2        2          1
+                     U1       H2       P0.27      1
+                     U3       13       SCL        1
+
+INTERNAL_I2C_SDA     R15      2        2          1
+                     U1       M2       P0.07      1
+                     U3       14       SDA        1
+
+N$1                  R1       1        1          1
+                     USB1     A5       A5/CC1     1
+
+N$2                  R2       2        2          1
+                     USB1     B5       B5/CC2     1
+
+N$3                  C2       2        2          1
+                     U1       D2       P0.00/XL1  1
+                     X1       2        2          1
+
+N$4                  C7       2        2          1
+                     U1       F2       P0.01/XL2  1
+                     X1       1        1          1
+
+N$5                  R7       1        1          1
+                     RGB6     R-       R-         1
+
+N$6                  R4       1        1          1
+                     RGB6     G-       G-         1
+
+N$7                  R10      2        2          1
+                     U1       AD4      D-         1
+
+N$8                  R11      2        2          1
+                     U1       AD6      D+         1
+
+N$9                  R3       1        1          1
+                     RGB6     B-       B-         1
+
+N$10                 CHG      +        +          1
+                     R5       2        2          1
+
+N$12                 ANT1     3        3          1
+                     C10      1        1          1
+
+N$20                 R12      1        1          1
+                     R18      1        1          1
+                     U2       B2       ISET       1
+
+N$23                 C22      2        2          1
+                     U1       AC5      DECUSB     1
+
+N$24                 C24      2        2          1
+                     U1       C1       DEC1       1
+
+N$25                 C31      1        1          1
+                     U1       N24      DEC5       1
+
+N$26                 C33      1        1          1
+                     U1       B24      XC1        1
+                     X2       1        2          1
+
+N$27                 C32      1        1          1
+                     U1       A23      XC2        1
+                     X2       3        4          1
+
+N$28                 C35      1        1          1
+                     U1       D23      DEC3       1
+
+N$30                 C36      2        2          1
+                     C38      1        1          1
+                     U1       H23      ANT        1
+
+N$31                 ANT1     1        S          1
+                     C37      2        2          1
+                     C38      2        2          1
+
+N$32                 C40      1        1          1
+                     U1       A18      DEC2       1
+
+N$35                 L3       1        1          1
+                     U1       B3       DCC        1
+
+P0.02_AIN0_LOW_A0_D0 J2       1        1          1
+                     J2       13       1          1
+                     U1       A12      P0.02/AIN0 1
+
+P0.03_AIN1_LOW_A1_D1 J2       14       2          1
+                     J2       2        2          1
+                     U1       B13      P0.03/AIN1 1
+
+P0.04_AIN2_A4_D4     J2       17       5          1
+                     J2       5        5          1
+                     U1       J1       P0.04/AIN2 1
+
+P0.05_AIN3_A5_D5     J2       18       6          1
+                     J2       6        6          1
+                     U1       K2       P0.05/AIN3 1
+
+P0.06_USER_BLUE      R3       2        2          1
+                     U1       L1       P0.06      1
+
+P0.09/NFC1           NFC1     1        T          1
+                     U1       L24      P0.09/NFC1 1
+
+P0.10/NFC2           NFC2     1        T          1
+                     U1       J24      P0.10/NFC2 1
+
+P0.13_HICHG          R12      2        2          1
+                     U1       AD8      P0.13      1
+
+P0.14_!READ_BAT      R17      2        2          1
+                     U1       AC9      P0.14      1
+
+P0.16_PDM_DATA       MIC1     3        DATA       1
+                     U1       AC11     P0.16      1
+
+P0.17_!CHG           CHG      -        -          1
+                     R8       1        1          1
+                     U1       AD12     P0.17      1
+                     U2       C1       PRETERM    1
+
+P0.20_QSPI_SIO_0     U1       AD16     P0.20      1
+                     U7       5        DI         1
+
+P0.21_QSPI_SCK       U1       AC17     P0.21      1
+                     U7       6        CLK        1
+
+P0.22_QSPI_SIO_2     U1       AD18     P0.22      1
+                     U7       3        !WP        1
+
+P0.23_QSPI_SIO_3     U1       AC19     P0.23      1
+                     U7       7        !HOLD      1
+
+P0.24_QSPI_SIO_1     U1       AD20     P0.24      1
+                     U7       2        DO         1
+
+P0.25_QSPI_CSN       U1       AC21     P0.25      1
+                     U7       1        !CS        1
+
+P0.26_USER_RED       R7       2        2          1
+                     U1       G1       P0.26      1
+
+P0.28_AIN4_LOW_A2_D2 J2       15       3          1
+                     J2       3        3          1
+                     U1       B11      P0.28/AIN4 1
+
+P0.29_AIN5_LOW_A3_D3 J2       16       4          1
+                     J2       4        4          1
+                     U1       A10      P0.29/AIN5 1
+
+P0.30_USER_GREEN     R4       2        2          1
+                     U1       B9       P0.30/AIN6 1
+
+P0.31_AIN7_BAT       R16      2        2          1
+                     R17      1        1          1
+                     U1       A8       P0.31/AIN7 1
+
+P1.00_PDM_CLK        MIC1     2        CLK        1
+                     U1       AD22     P1.00      1
+
+P1.10_MIC_PWR        C8       2        2          1
+                     MIC1     1        VDD        1
+                     U1       A20      P1.10      1
+
+P1.11_TX_D6          J2       19       7          1
+                     J2       7        7          1
+                     U1       B19      P1.11      1
+
+P1.12_RX_D7          J1       1        1          1
+                     J1       13       1          1
+                     U1       B17      P1.12      1
+
+P1.13_SCK_D8         J1       14       2          1
+                     J1       2        2          1
+                     U1       A16      P1.13      1
+
+P1.14_MISO_D9        J1       15       3          1
+                     J1       3        3          1
+                     U1       B15      P1.14      1
+
+P1.15_MOSI_D10       J1       16       4          1
+                     J1       4        4          1
+                     U1       A14      P1.15      1
+
+PWR_LED              U1       R24      P1.06      1
+
+RESET                C5       1        1          1
+                     K1       1        A0         1
+                     K1       3        A1         1
+                     R13      2        2          1
+                     TP2      T        T          1
+                     U1       AC13     P0.18/RESET 1
+
+SWDCLK               TP3      T        T          1
+                     U1       AA24     SWDCLK     1
+
+SWDIO                TP5      T        T          1
+                     U1       AC24     SWDIO      1
+
+USB_D+               R11      1        1          1
+                     USB1     A6       A6/DP1     1
+                     USB1     B6       B6/DP2     1
+
+USB_D-               R10      1        1          1
+                     USB1     A7       A7/DN1     1
+                     USB1     B7       B7/DN2     1
+
+VBAT                 BAT      1        T          1
+                     C30      1        1          1
+                     Q1       1        D          1
+                     R16      1        1          1
+                     U2       A1       OUT        1
+
+VBUS                 C25      2        2          1
+                     C9       2        2          1
+                     D1       +        +          1
+                     J1       19       7          1
+                     J1       7        7          1
+                     Q1       2        G          1
+                     R9       2        2          1
+                     U1       AD2      VBUS       1
+                     U2       A2       IN         1
+                     USB1     A4_B9    A4/B9/VBUS 1
+                     USB1     B4_A9    B4/A9/VBUS 1
+
+VIN                  C4       1        1          1
+                     D1       -        -          1
+                     Q1       3        S          1
+                     U6       3        EN         1
+                     U6       4        IN         1
+

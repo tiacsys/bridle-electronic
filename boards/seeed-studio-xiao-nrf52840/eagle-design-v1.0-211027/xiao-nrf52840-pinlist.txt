@@ -1,0 +1,363 @@
+Pinlist
+
+Exported from xiao-nrf52840.sch at 23.10.22 09:58
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Part     Pad      Pin        Dir      Net
+
+ANT1     1        S          io       N$31
+         2        GND        io       GND
+         3        3          io       N$12
+
+BAT      1        T          io       VBAT
+
+C1       1        1          pas      GND
+         2        2          pas      6D_PWR
+
+C2       1        1          pas      GND
+         2        2          pas      N$3
+
+C3       1        1          pas      GND
+         2        2          pas      3V3
+
+C4       1        1          pas      VIN
+         2        2          pas      GND
+
+C5       1        1          pas      RESET
+         2        2          pas      GND
+
+C6       1        1          pas      GND
+         2        2          pas      3V3
+
+C7       1        1          pas      GND
+         2        2          pas      N$4
+
+C8       1        1          pas      GND
+         2        2          pas      P1.10_MIC_PWR
+
+C9       1        1          pas      GND
+         2        2          pas      VBUS
+
+C10      1        1          pas      N$12
+         2        2          pas      GND
+
+C22      1        1          pas      GND
+         2        2          pas      N$23
+
+C24      1        1          pas      GND
+         2        2          pas      N$24
+
+C25      1        1          pas      GND
+         2        2          pas      VBUS
+
+C29      1        1          pas      GND
+         2        2          pas      3V3
+
+C30      1        1          pas      VBAT
+         2        2          pas      GND
+
+C31      1        1          pas      N$25
+         2        2          pas      GND
+
+C32      1        1          pas      N$27
+         2        2          pas      GND
+
+C33      1        1          pas      N$26
+         2        2          pas      GND
+
+C34      1        1          pas      DEC4-6
+         2        2          pas      GND
+
+C35      1        1          pas      N$28
+         2        2          pas      GND
+
+C36      1        1          pas      GND
+         2        2          pas      N$30
+
+C37      1        1          pas      GND
+         2        2          pas      N$31
+
+C38      1        1          pas      N$30
+         2        2          pas      N$31
+
+C39      1        1          pas      3V3
+         2        2          pas      GND
+
+C40      1        1          pas      N$32
+         2        2          pas      GND
+
+C41      1        1          pas      GND
+         2        2          pas      3V3
+
+C42      1        1          pas      DEC4-6
+         2        2          pas      GND
+
+CHG      +        +          pas      N$10
+         -        -          pas      P0.17_!CHG
+
+D1       +        +          pas      VBUS
+         -        -          pas      VIN
+
+GND      1        T          io       GND
+
+J1       1        1          io       P1.12_RX_D7
+         2        2          io       P1.13_SCK_D8
+         3        3          io       P1.14_MISO_D9
+         4        4          io       P1.15_MOSI_D10
+         5        5          io       3V3
+         6        6          io       GND
+         7        7          io       VBUS
+         13       1          io       P1.12_RX_D7
+         14       2          io       P1.13_SCK_D8
+         15       3          io       P1.14_MISO_D9
+         16       4          io       P1.15_MOSI_D10
+         17       5          io       3V3
+         18       6          io       GND
+         19       7          io       VBUS
+
+J2       1        1          io       P0.02_AIN0_LOW_A0_D0
+         2        2          io       P0.03_AIN1_LOW_A1_D1
+         3        3          io       P0.28_AIN4_LOW_A2_D2
+         4        4          io       P0.29_AIN5_LOW_A3_D3
+         5        5          io       P0.04_AIN2_A4_D4
+         6        6          io       P0.05_AIN3_A5_D5
+         7        7          io       P1.11_TX_D6
+         13       1          io       P0.02_AIN0_LOW_A0_D0
+         14       2          io       P0.03_AIN1_LOW_A1_D1
+         15       3          io       P0.28_AIN4_LOW_A2_D2
+         16       4          io       P0.29_AIN5_LOW_A3_D3
+         17       5          io       P0.04_AIN2_A4_D4
+         18       6          io       P0.05_AIN3_A5_D5
+         19       7          io       P1.11_TX_D6
+
+K1       1        A0         io       RESET
+         2        B0         io       GND
+         3        A1         io       RESET
+         4        B1         io       GND
+
+L3       1        1          pas      N$35
+         2        2          pas      DEC4-6
+
+MIC1     1        VDD        io       P1.10_MIC_PWR
+         2        CLK        io       P1.00_PDM_CLK
+         3        DATA       io       P0.16_PDM_DATA
+         4        GND        io       GND
+         5        L/R        io       GND
+         6        GND        io       GND
+
+NFC1     1        T          io       P0.09/NFC1
+
+NFC2     1        T          io       P0.10/NFC2
+
+Q1       1        D          io       VBAT
+         2        G          io       VBUS
+         3        S          io       VIN
+
+R1       1        1          pas      N$1
+         2        2          pas      GND
+
+R2       1        1          pas      GND
+         2        2          pas      N$2
+
+R3       1        1          pas      N$9
+         2        2          pas      P0.06_USER_BLUE
+
+R4       1        1          pas      N$6
+         2        2          pas      P0.30_USER_GREEN
+
+R5       1        1          pas      3V3
+         2        2          pas      N$10
+
+R7       1        1          pas      N$5
+         2        2          pas      P0.26_USER_RED
+
+R8       1        1          pas      P0.17_!CHG
+         2        2          pas      GND
+
+R9       1        1          pas      GND
+         2        2          pas      VBUS
+
+R10      1        1          pas      USB_D-
+         2        2          pas      N$7
+
+R11      1        1          pas      USB_D+
+         2        2          pas      N$8
+
+R12      1        1          pas      N$20
+         2        2          pas      P0.13_HICHG
+
+R13      1        1          pas      3V3
+         2        2          pas      RESET
+
+R14      1        1          pas      6D_PWR
+         2        2          pas      INTERNAL_I2C_SCL
+
+R15      1        1          pas      6D_PWR
+         2        2          pas      INTERNAL_I2C_SDA
+
+R16      1        1          pas      VBAT
+         2        2          pas      P0.31_AIN7_BAT
+
+R17      1        1          pas      P0.31_AIN7_BAT
+         2        2          pas      P0.14_!READ_BAT
+
+R18      1        1          pas      N$20
+         2        2          pas      GND
+
+R20      1        1          pas      /CE
+         2        2          pas      GND
+
+RGB6     +        +          io       3V3
+         B-       B-         io       N$9
+         G-       G-         io       N$6
+         R-       R-         io       N$5
+
+TP1      T        T          io       GND
+
+TP2      T        T          io       RESET
+
+TP3      T        T          io       SWDCLK
+
+TP5      T        T          io       SWDIO
+
+U1       A8       P0.31/AIN7 io       P0.31_AIN7_BAT
+         B1       VDD        io       3V3
+         B3       DCC        io       N$35
+         B5       DEC4       io       DEC4-6
+         B7       VSS        io       GND
+         B9       P0.30/AIN6 io       P0.30_USER_GREEN
+         C1       DEC1       io       N$24
+         D2       P0.00/XL1  io       N$3
+         F2       P0.01/XL2  io       N$4
+         G1       P0.26      io       P0.26_USER_RED
+         H2       P0.27      io       INTERNAL_I2C_SCL
+         J1       P0.04/AIN2 io       P0.04_AIN2_A4_D4
+         K2       P0.05/AIN3 io       P0.05_AIN3_A5_D5
+         L1       P0.06      io       P0.06_USER_BLUE
+         M2       P0.07      io       INTERNAL_I2C_SDA
+         N1       P0.08      io                *** unconnected ***
+         P2       P1.08      io       6D_PWR
+         R1       P1.09      io                *** unconnected ***
+         T2       P0.11      io       6D_INT1
+         U1       P0.12      io                *** unconnected ***
+         W1       VDD        io       3V3
+         Y2       VDDH       io       3V3
+         A10      P0.29/AIN5 io       P0.29_AIN5_LOW_A3_D3
+         A12      P0.02/AIN0 io       P0.02_AIN0_LOW_A0_D0
+         A14      P1.15      io       P1.15_MOSI_D10
+         A16      P1.13      io       P1.13_SCK_D8
+         A18      DEC2       io       N$32
+         A20      P1.10      io       P1.10_MIC_PWR
+         A22      VDD        io       3V3
+         A23      XC2        io       N$27
+         AB2      DCCH       io                *** unconnected ***
+         AC5      DECUSB     io       N$23
+         AC9      P0.14      io       P0.14_!READ_BAT
+         AD2      VBUS       io       VBUS
+         AD4      D-         io       N$7
+         AD6      D+         io       N$8
+         AD8      P0.13      io       P0.13_HICHG
+         B11      P0.28/AIN4 io       P0.28_AIN4_LOW_A2_D2
+         B13      P0.03/AIN1 io       P0.03_AIN1_LOW_A1_D1
+         B15      P1.14      io       P1.14_MISO_D9
+         B17      P1.12      io       P1.12_RX_D7
+         B19      P1.11      io       P1.11_TX_D6
+         B24      XC1        io       N$26
+         D23      DEC3       io       N$28
+         E24      DEC6       io       DEC4-6
+         F23      VSS_PA     io       GND
+         G74      VSS_PAD    io       GND
+         H23      ANT        io       N$30
+         J24      P0.10/NFC2 io       P0.10/NFC2
+         L24      P0.09/NFC1 io       P0.09/NFC1
+         N24      DEC5       io       N$25
+         P23      P1.07      io                *** unconnected ***
+         R24      P1.06      io       PWR_LED
+         T23      P1.05      io                *** unconnected ***
+         U24      P1.04      io                *** unconnected ***
+         V23      P1.03      io                *** unconnected ***
+         W24      P1.02      io                *** unconnected ***
+         Y23      P1.01      io                *** unconnected ***
+         AA24     SWDCLK     in       SWDCLK
+         AC11     P0.16      io       P0.16_PDM_DATA
+         AC13     P0.18/RESET io       RESET
+         AC15     P0.19      io                *** unconnected ***
+         AC17     P0.21      io       P0.21_QSPI_SCK
+         AC19     P0.23      io       P0.23_QSPI_SIO_3
+         AC21     P0.25      io       P0.25_QSPI_CSN
+         AC24     SWDIO      io       SWDIO
+         AD10     P0.15      io                *** unconnected ***
+         AD12     P0.17      io       P0.17_!CHG
+         AD14     VDD        io       3V3
+         AD16     P0.20      io       P0.20_QSPI_SIO_0
+         AD18     P0.22      io       P0.22_QSPI_SIO_2
+         AD20     P0.24      io       P0.24_QSPI_SIO_1
+         AD22     P1.00      io       P1.00_PDM_CLK
+         AD23     VDD        io       3V3
+
+U2       A1       OUT        io       VBAT
+         A2       IN         io       VBUS
+         B1       TS         io       /CE
+         B2       ISET       io       N$20
+         C1       PRETERM    io       P0.17_!CHG
+         C2       VSS        io       GND
+
+U3       1        SDO/DA0    io       GND
+         2        SDX        io       GND
+         3        SCX        io       GND
+         4        INT1       io       6D_INT1
+         5        VDDIO      io       6D_PWR
+         6        GND        io       GND
+         7        GND        io       GND
+         8        VDD        io       6D_PWR
+         9        INT2       io                *** unconnected ***
+         10       NC         io                *** unconnected ***
+         11       NC         io                *** unconnected ***
+         12       CS         io       6D_PWR
+         13       SCL        io       INTERNAL_I2C_SCL
+         14       SDA        io       INTERNAL_I2C_SDA
+
+U6       1        OUT        io       3V3
+         2        GND        io       GND
+         3        EN         io       VIN
+         4        IN         io       VIN
+         T        GND        io       GND
+
+U7       1        !CS        io       P0.25_QSPI_CSN
+         2        DO         io       P0.24_QSPI_SIO_1
+         3        !WP        io       P0.22_QSPI_SIO_2
+         4        GND        io       GND
+         5        DI         io       P0.20_QSPI_SIO_0
+         6        CLK        io       P0.21_QSPI_SCK
+         7        !HOLD      io       P0.23_QSPI_SIO_3
+         8        VCC        io       3V3
+         PAD      T          io       GND
+
+USB1     A5       A5/CC1     io       N$1
+         A6       A6/DP1     io       USB_D+
+         A7       A7/DN1     io       USB_D-
+         A8       A8/SBU1    io                *** unconnected ***
+         B5       B5/CC2     io       N$2
+         B6       B6/DP2     io       USB_D+
+         B7       B7/DN2     io       USB_D-
+         B8       B8/SBU2    io                *** unconnected ***
+         S1       S1         io       GND
+         S2       S2         io       GND
+         S3       S3         io       GND
+         S4       S4         io       GND
+         S5       S1         io       GND
+         S6       S2         io       GND
+         A4_B9    A4/B9/VBUS io       VBUS
+         B4_A9    B4/A9/VBUS io       VBUS
+         A1_B12   A1/B12/GND io       GND
+         B1_A12   B1/A12/GND io       GND
+
+X1       1        1          pas      N$4
+         2        2          pas      N$3
+
+X2       1        2          pas      N$26
+         2        1          io       GND
+         3        4          pas      N$27
+         4        3          io       GND
+

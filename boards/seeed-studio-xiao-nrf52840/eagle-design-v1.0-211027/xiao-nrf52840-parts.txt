@@ -1,0 +1,81 @@
+Partlist
+
+Exported from xiao-nrf52840.sch at 23.10.22 09:58
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value              Device                          Package                    Library                 Sheet
+
+ANT1                        ANTENNA-AN3216                  ANT-SMD3P-3.2X1.6X1.04MM   Antenna_rfeca3216060a1t 1
+BAT                         TEST-POINT'4080'                TP-80X40MIL                Discrete-new            1
+C1       100nF              C-0201                          C0201                      GroveX                  1
+C2       10pF               C-0201                          C0201                      GroveX                  1
+C3       2.2uF              C-0201                          C0201                      GroveX                  1
+C4       2.2uF              C-0201                          C0201                      GroveX                  1
+C5       100nF              C-0201                          C0201                      GroveX                  1
+C6       2.2uF              C-0201                          C0201                      GroveX                  1
+C7       10pF               C-0201                          C0201                      GroveX                  1
+C8       100nF              C-0201                          C0201                      GroveX                  1
+C9       2.2uF              C-0201                          C0201                      GroveX                  1
+C10      1nF                C-0402                          C0402                      GroveX                  1
+C22      2.2uF              C-0201                          C0201                      GroveX                  1
+C24      100nF              C-0201                          C0201                      GroveX                  1
+C25      2.2uF              C-0201                          C0201                      GroveX                  1
+C29      2.2uF              C-0201                          C0201                      GroveX                  1
+C30      2.2uF              C-0201                          C0201                      GroveX                  1
+C31      820pF              C-0201                          C0201                      GroveX                  1
+C32      10pF               C-0201                          C0201                      GroveX                  1
+C33      10pF               C-0201                          C0201                      GroveX                  1
+C34      100nF              C-0201                          C0201                      GroveX                  1
+C35      100pF              C-0201                          C0201                      GroveX                  1
+C36      0.8pF              C-0201                          C0201                      GroveX                  1
+C37      0.5pF              C-0201                          C0201                      GroveX                  1
+C38      4.7nH              L0201                           L0201                      GroveX                  1
+C39      2.2uF              C-0201                          C0201                      GroveX                  1
+C40      DNP                C-0201                          C0201                      GroveX                  1
+C41      2.2uF              C-0201                          C0201                      GroveX                  1
+C42      2.2uF              C-0201                          C0201                      GroveX                  1
+CHG      RED                LED-0402                        LED-0402                   Discrete-small          1
+D1                          DIODE'0603'                     SOD-523                    Discrete-new            1
+GND      GND                TEST-POINT'4080'                TP-80X40MIL                Discrete-new            1
+J1       DNP                HEADER-7P-HALF-HOLE-2.54        H7-HALF-HOLE-2.54          Connector-new           1
+J2       DNP                HEADER-7P-HALF-HOLE-2.54        H7-HALF-HOLE-2.54          Connector-new           1
+K1                          BUTTON-4P                       SW4-SMD-2.8-2.6X1.6X0.53MM Making                  1
+L3       10uH               L0603                           L0603                      GroveX                  1
+MIC1     MSM261D3526H1CPM   MIC-MSM261D3526H1CPM            MIC6P-3.5X2.65X0.94MM      Making                  1
+NFC1                        TEST-POINT'4080'                TP-80X40MIL                Discrete-new            1
+NFC2                        TEST-POINT'4080'                TP-80X40MIL                Discrete-new            1
+Q1       PMOS_1.00.6*0.35MM PMOS_1.00.6*0.35MM              PMOS_1.0*0.6*0.35MM        PMOS_1006               1
+R1       5.1k               R-0201                          R0201                      GroveX                  1
+R2       5.1k               R-0201                          R0201                      GroveX                  1
+R3       2.2k               R-0201                          R0201                      GroveX                  1
+R4       10k                R-0201                          R0201                      GroveX                  1
+R5       2.2k               R-0201                          R0201                      GroveX                  1
+R7       2.2k               R-0201                          R0201                      GroveX                  1
+R8       DNP                R-0201                          R0201                      GroveX                  1
+R9       100k               R-0201                          R0201                      GroveX                  1
+R10      33R                R-0201                          R0201                      GroveX                  1
+R11      33R                R-0201                          R0201                      GroveX                  1
+R12      2.7k               R-0201                          R0201                      GroveX                  1
+R13      10k                R-0201                          R0201                      GroveX                  1
+R14      10k                R-0201                          R0201                      GroveX                  1
+R15      10k                R-0201                          R0201                      GroveX                  1
+R16      1M_1%              R-0201                          R0201                      GroveX                  1
+R17      510k_1%            R-0201                          R0201                      GroveX                  1
+R18      2.7k               R-0201                          R0201                      GroveX                  1
+R20      10k                R-0201                          R0201                      GroveX                  1
+RGB6     RGB                RGB-1010                        4P1010                     LoRaPhone               1
+TP1                         TEST-POINT'4545'                TP-D45MIL                  Discrete-new            1
+TP2                         TEST-POINT'4545'                TP-D45MIL                  Discrete-new            1
+TP3                         TEST-POINT'4545'                TP-D45MIL                  Discrete-new            1
+TP5                         TEST-POINT'4545'                TP-D45MIL                  Discrete-new            1
+U1                          NRF52840_QF                     AQFN50P700X700X85_HS-74N   Making                  1
+U2       BQ25100            BQ25101_DSBGA_6_BQ25101_DSBGA_6 BQ25101_DSBGA_6_BQ25101    Seeed XIAO BLE          1
+U3       LSM6DS3TR-C        SENSOR-LSM6DS3TR-C              LGA14-0.5-2.5X3X0.86MM     Making                  1
+U6       3.3V               TLV733P                         X2SON-4                    GroveX                  1
+U7       DNP                W25XXC                          USON2X3_8                  USB2.0-TYPE-C           1
+USB1                        USB2.0-TYPE-C                   USB2.0-TYPE-C              USB C                   1
+X1       32.768KHz          CRYSTAL-2P-1610                 X2-SMD-L1.6X1.0X0.5MM      Discrete-new            1
+X2       32MHz              CRYSTAL'-1612'                  4P1612                     G2                      1
