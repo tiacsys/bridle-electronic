@@ -24,7 +24,7 @@ to make the best designed products and even better user experiences.
 ### Postal address
 
 **Shenzhen Zaowubang Technology Co.,Ltd.** (Makerdiary)<br/>
-5F, Unit 2, Junlan Building, No. 1233, Guanguang Road Shenzhen)<br/>
+5F, Unit 2, Junlan Building, No. 1233, Guanguang Road Shenzhen<br/>
 518110 Guangdong<br/>
 China
 
