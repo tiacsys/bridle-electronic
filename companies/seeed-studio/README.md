@@ -69,7 +69,7 @@ Japan
 
 **P**: +86 (0) 755 860 95676<br/>
 **E**: info@seeedstudio.com<br/>
-**W**: https://www.seeedstudio.com/about_seeed
+**W**: https://www.seeedstudio.com/about_seeed<br/>
 **W**: https://www.seeedstudio.com/contacts
 
 ### Social media

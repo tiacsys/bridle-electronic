@@ -43,5 +43,5 @@ China
 **P**: +86 (0) 512 62 95 6055<br/>
 **F**: +86 (0) 512 62 95 6056<br/>
 **E**: info@memsensing.com<br/>
-**W**: https://www.memsensing.com/contact.html
+**W**: https://www.memsensing.com/contact.html<br/>
 **W**: https://www.memsensing.com/About_us.html

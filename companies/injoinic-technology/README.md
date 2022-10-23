@@ -34,6 +34,7 @@ China
 
 ### Electronic contacts
 
-**M**: +86 (0) 756 33 93 806<br/>
+**P**: +86 (0) 756 33 93 806<br/>
 **E**: sales@injoinic.com<br/>
+**W**: http://www.injoinic.com/contact.html<br/>
 **W**: http://www.injoinic.com/company_info.html

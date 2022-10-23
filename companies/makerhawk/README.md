@@ -31,7 +31,8 @@ China
 
 **M**: +86 (0) 159 20 088 491<br/>
 **E**: makerhawk@163.com<br/>
-**W**: https://www.makerhawk.com/pages/contact-us
+**W**: https://www.makerhawk.com/pages/contact-us<br/>
+**W**: https://www.makerhawk.com/pages/about-us
 
 ### Social media
 
