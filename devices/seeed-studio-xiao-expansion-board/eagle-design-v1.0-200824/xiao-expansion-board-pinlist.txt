@@ -1,0 +1,443 @@
+Pinlist
+
+Exported from xiao-expansion-board.sch at 01.11.22 01:28
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Part     Pad      Pin        Dir      Net
+
+BAT1     V-       V-         io       GND
+         V+@1     V+         io       N$5
+         V+@2     V+         io       N$5
+
+BUZ1     +        +          io       SYS_3V3
+         -        -          io       N$7
+
+C1       1        1          pas      VSYS
+         2        2          pas      GND
+
+C2       1        1          pas      VDD_3V3_SD
+         2        2          pas      GND
+
+C3       1        1          pas      VDD_3V3_SD
+         2        2          pas      GND
+
+C4       1        1          pas      N$23
+         2        2          pas      GND
+
+C5       1        1          pas      N$13
+         2        2          pas      N$9
+
+C6       1        1          pas      N$14
+         2        2          pas      N$12
+
+C7       1        1          pas      OLED_RST
+         2        2          pas      GND
+
+C8       1        1          pas      GND
+         2        2          pas      N$16
+
+C9       1        1          pas      GND
+         2        2          pas      N$17
+
+C10      1        1          pas      SYS_3V3
+         2        2          pas      GND
+
+C11      1        1          pas      VSYS
+         2        2          pas      GND
+
+C12      1        1          pas      SYS_3V3
+         2        2          pas      GND
+
+C13      1        1          pas      GND
+         2        2          pas      N$10
+
+C14      1        1          pas      VSYS
+         2        2          pas      GND
+
+C15      1        1          pas      GND
+         2        2          pas      VSYS
+
+C16      1        1          pas      GND
+         2        2          pas      VSYS
+
+C17      1        1          pas      GND
+         2        2          pas      N$22
+
+C18      1        1          pas      VSYS
+         2        2          pas      GND
+
+C19      1        1          pas      GND
+         2        2          pas      N$22
+
+C20      1        1          pas      GND
+         2        2          pas      SYS_3V3
+
+C21      1        1          pas      GND
+         2        2          pas      SYS_3V3
+
+C22      1        1          pas      USB_5V
+         2        2          pas      GND
+
+C23      1        1          pas      USB_5V
+         2        2          pas      GND
+
+C24      1        1          pas      GND
+         2        2          pas      SYS_3V3
+
+C25      1        1          pas      VBAT
+         2        2          pas      GND
+
+C26      1        1          pas      GND
+         2        2          pas      SYS_3V3
+
+C27      1        1          pas      GND
+         2        2          pas      VSYS
+
+C28      1        1          pas      VBOOST_5V
+         2        2          pas      GND
+
+C29      1        1          pas      GND
+         2        2          pas      SYS_3V3
+
+C30      1        1          pas      GND
+         2        2          pas      E_VBAT
+
+D1       1        1          io       GND
+         2        2          io       VDD_3V3_SD
+
+D2       +        +          pas      OLED_RST
+         -        -          pas      VDD_3V3_OLED
+
+D3       +        +          pas      N$5
+         -        -          pas      N$23
+
+D4       +        +          pas      SYS_3V3
+         -        -          pas      N$23
+
+D5       +        +          pas      N$7
+         -        -          pas      SYS_3V3
+
+D15      1        14         io       N$64
+         2        13         io       N$76
+         3        12         io       N$77
+         4        11         io       N$78
+         5        10         io       GND
+         6        9          io       D2_SD_CS
+         7        8          io       N$72
+         8        8          io       N$72
+         9        9          io       D2_SD_CS
+         10       10         io       GND
+         11       11         io       N$78
+         12       12         io       N$77
+         13       13         io       N$76
+         14       14         io       N$64
+
+D16      +        +          pas      VSYS
+         -        -          pas      N$30
+
+FB1      1        1          io       SYS_3V3
+         2        2          io       VDD_3V3_OLED
+
+FB3      1        1          io       SYS_3V3
+         2        2          io       VDD_3V3_SD
+
+J1       1        1          io       D5_SCL
+         2        2          io       D4_SDA
+         3        3          io       SYS_3V3
+         4        4          io       GND
+
+J2       +        1          io       E_VBAT
+         -        2          io       GND
+         3        3          io       GND
+         4        4          io       GND
+
+J3       1        DATA2      io       N$72
+         2        CS         io       D2_SD_CS
+         3        DI         io       N$78
+         4        VDD        io       VDD_3V3_SD
+         5        SCLK       io       N$77
+         6        VSS        io       GND
+         7        DO         io       N$76
+         8        DATA1      io       N$64
+         9        CDN        io                *** unconnected ***
+         G1       G1         io       GND
+         G2       G2         io       GND
+         G3       G3         io       GND
+         G4       G3         io       GND
+
+J4       1        1          io       D5_SCL
+         2        2          io       D4_SDA
+         3        3          io       SYS_3V3
+         4        4          io       GND
+
+J5       1        1          io       A0_D0
+         2        2          io                *** unconnected ***
+         3        3          io       SYS_3V3
+         4        4          io       GND
+
+J6       1        1          io       A7_D7_RX
+         2        2          io       A6_D6_TX
+         3        3          io       SYS_3V3
+         4        4          io       GND
+
+J7       1        1          io       SWCLK
+         2        2          io       SWDIO
+         3        3          io       SYS_3V3
+         4        4          io       GND
+         5        5          io       GND
+         6        6          io       VBOOST_5V
+         7        7          io       A6_D6_TX
+         8        8          io       A7_D7_RX
+
+J10      1        1          io       A0_D0
+         2        2          io       A1_D1
+         3        3          io       D2_SD_CS
+         4        4          io       A3_D3
+         5        5          io       D4_SDA
+         6        6          io       D5_SCL
+         7        7          io       A6_D6_TX
+
+J11      1        1          io       USB_5V
+         2        2          io       GND
+         3        3          io       SYS_3V3
+         4        4          io       D10_SD_MOSI
+         5        5          io       D9_SD_MISO
+         6        6          io       D8_SD_SCK
+         7        7          io       A7_D7_RX
+
+JP1      00       R          io       N$20
+         11       L          io       N$19
+         MM       C          io       IIC_ADDR
+
+JP2      00       R          io                *** unconnected ***
+         11       L          io       A3_D3_BUZZER
+         MM       C          io       A3_D3
+
+K1       1        1          io       GND
+         2        2          io       A1_D1
+         S1       S1         io       GND
+         S2       S2         io       GND
+
+K2       1        1          io       GND
+         2        2          io       RESET
+         S1       S1         io       GND
+         S2       S2         io       GND
+
+L1       1        1          pas      VSYS
+         2        2          pas      N$1
+
+L2       1        1          pas      N$29
+         2        2          pas      SYS_3V3
+
+L3       1        1          pas      N$26
+         2        2          pas      VSYS
+
+Q1       1        G          pas      N$8
+         2        S          pas      GND
+         3        D          pas      N$6
+
+R1       1        1          pas      N$24
+         2        2          pas      N$27
+
+R2       1        1          pas      INT
+         2        2          pas      SYS_3V3
+
+R3       1        1          pas      A3_D3_BUZZER
+         2        2          pas      N$8
+
+R4       1        1          pas      N$7
+         2        2          pas      N$6
+
+R5       1        1          pas      VBOOST_5V
+         2        2          pas      N$22
+
+R6       1        1          pas      N$22
+         2        2          pas      N$24
+
+R7       1        1          pas      GND
+         2        2          pas      N$8
+
+R8       1        1          pas      CLKOUT
+         2        2          pas      SYS_3V3
+
+R9       1        1          pas      D4_SDA
+         2        2          pas      SYS_3V3
+
+R10      1        1          pas      D5_SCL
+         2        2          pas      SYS_3V3
+
+R11      1        1          pas      N$27
+         2        2          pas      GND
+
+R15      1        1          pas      N$37
+         2        2          pas      GND
+
+R16      1        1          pas      USB_5V
+         2        2          pas      N$33
+
+R17      1        1          pas      N$30
+         2        2          pas      N$31
+
+R18      1        1          pas      N$33
+         2        2          pas      GND
+
+R19      1        1          pas      N$36
+         2        2          pas      GND
+
+R20      1        1          pas      N$34
+         2        2          pas      GND
+
+R21      1        1          pas      OLED_RST
+         2        2          pas      VDD_3V3_OLED
+
+R22      1        1          pas      N$15
+         2        2          pas      GND
+
+R23      1        1          pas      VDD_3V3_OLED
+         2        2          pas      N$18
+
+R24      1        1          pas      GND
+         2        2          pas      N$19
+
+R25      1        1          pas      VDD_3V3_OLED
+         2        2          pas      N$20
+
+R40      1        1          pas      N$21
+         2        2          pas      SYS_3V3
+
+R41      1        1          pas      GND
+         2        2          pas      N$21
+
+R43      1        1          pas      N$76
+         2        2          pas      D9_SD_MISO
+
+R44      1        1          pas      N$77
+         2        2          pas      D8_SD_SCK
+
+R45      1        1          pas      N$78
+         2        2          pas      D10_SD_MOSI
+
+R60      1        1          pas      N$64
+         2        2          pas      VDD_3V3_SD
+
+R61      1        1          pas      D9_SD_MISO
+         2        2          pas      VDD_3V3_SD
+
+R62      1        1          pas      D10_SD_MOSI
+         2        2          pas      VDD_3V3_SD
+
+R63      1        1          pas      D2_SD_CS
+         2        2          pas      VDD_3V3_SD
+
+R64      1        1          pas      N$72
+         2        2          pas      VDD_3V3_SD
+
+SW1      CH1A     CH1A       io                *** unconnected ***
+         CH1B     CH1B       io       E_VBAT
+         CH2A     CH2A       io                *** unconnected ***
+         CH2B     CH2B       io       E_VBAT
+         COM1     COM1       io       VBAT
+         COM2     COM2       io       VBAT
+
+TP1      T        T          io       CLKOUT
+
+TP2      T        T          io       INT
+
+U1       1        OSCI       io       N$10
+         2        OSCO       io       N$11
+         3        !INT       io       INT
+         4        VSS        io       GND
+         5        SDA        io       D4_SDA
+         6        SCL        io       D5_SCL
+         7        CLKOUT     io       CLKOUT
+         8        VDD        io       N$23
+
+U2       1        PA02_A0_D0 io       A0_D0
+         2        PA4_A1_D1  io       A1_D1
+         3        PA10_A2_D2 io       D2_SD_CS
+         4        PA11_A3_D3 io       A3_D3
+         5        PA8_A4_D4_SDA io       D4_SDA
+         6        PA9_A5_D5_SCL io       D5_SCL
+         7        PB08_A6_D6_TX io       A6_D6_TX
+         8        PB09_A7_D7_RX io       A7_D7_RX
+         9        PA7_A8_D8_SCK io       D8_SD_SCK
+         10       PA5_A9_D9_MISO io       D9_SD_MISO
+         11       PA6_A10_D10_MOSI io       D10_SD_MOSI
+         12       3V3        io       SYS_3V3
+         13       GND        io       GND
+         14       5V         io       USB_5V
+         15       RST        io       RESET
+         16       GND        io       GND
+         17       PA30_SWCLK io       SWCLK
+         18       PA31_SWDIO io       SWDIO
+
+U3       1        PGND       io       GND
+         2        SW         io       N$29
+         3        AGND       io       GND
+         4        FB         io       N$21
+         5        EN         io       VSYS
+         6        MODE       io       GND
+         7        AVIN       io       VSYS
+         8        PVIN       io       VSYS
+         9        PAD        io       GND
+
+U4       1        OUT        io       N$22
+         2        GND        io       GND
+         3        EN         io       VSYS
+         4        IN         io       VSYS
+         5        FB         io       N$27
+         6        SW         io       N$1
+
+U5       1        SYS        io       VSYS
+         2        IN         io       USB_5V
+         3        SW         io       N$26
+         4        SW         io       N$26
+         5        PGND       io       N$37
+         6        ENB        io       GND
+         7        NTC        io       N$33
+         8        GND        io       GND
+         9        STAT       io       N$31
+         10       GND        io       GND
+         11       ISET1      io       N$34
+         12       ISET2      io       N$36
+         13       USB_DET    io       GND
+         14       BATT       io       VBAT
+         15       SYS        io       VSYS
+         16       BATT       io       VBAT
+         PAD      PAD        io       GND
+
+U6       1        NC/GND     in       GND
+         2        C2P        in       N$9
+         3        C2N        in       N$13
+         4        C1P        in       N$12
+         5        C1N        in       N$14
+         6        VBAT       in       N$18
+         7        NC         nc                *** unconnected ***
+         8        VSS        pwr      GND
+         9        VDD        pwr      VDD_3V3_OLED
+         10       BS0        in       GND
+         11       BS1        in       VDD_3V3_OLED
+         12       BS2        in                *** unconnected ***
+         13       /CS        in       GND
+         14       /RES       in       OLED_RST
+         15       D/C        in       IIC_ADDR
+         16       R/W        in                *** unconnected ***
+         17       E/RD       in                *** unconnected ***
+         18       D0/SCLK    io       D5_SCL
+         19       D1/SDIN    io       D4_SDA
+         20       D2         in       D4_SDA
+         21       D3         in                *** unconnected ***
+         22       D4         in                *** unconnected ***
+         23       D5         in                *** unconnected ***
+         24       D6         in                *** unconnected ***
+         25       D7         in                *** unconnected ***
+         26       IREF       in       N$15
+         27       VCOMH      out      N$16
+         28       VCC        pwr      N$17
+         29       VLSS       pwr      GND
+         30       NC/GND1    in       GND
+
+X1       1        1          pas      N$11
+         2        2          pas      N$10
+
