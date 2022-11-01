@@ -1,0 +1,50 @@
+Partlist
+
+Exported from xiao-grove-shield.sch at 31.10.22 01:52
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value          Device                        Package                    Library        Sheet
+
+C1       100nF          CAP-0402                      C0402                      Discrete-new   1
+C10      10uF           CAP-0603                      C0603                      Discrete-new   1
+C15      100nF          C-0402                        C0402                      Discrete-small 1
+C16      10uF           CAP-0603                      C0603                      Discrete-new   1
+C22      10uF           CAP-0603                      C0603                      Discrete-new   1
+C23      10uF           CAP-0603                      C0603                      Discrete-new   1
+C24      10uF           CAP-0603                      C0603                      Discrete-new   1
+C25      1uF            C-0402                        C0402                      Discrete-small 1
+C28      10uF           CAP-0603                      C0603                      Discrete-new   1
+D16      GREEN          LED-0402                      LED-0402                   Discrete-new   1
+J1                      GROVE-CONNECTOR-DIP-320110033 HW4-2.0                    Connector-new  1
+J2                      GROVE-CONNECTOR-DIP-320110033 HW4-2.0                    Connector-new  1
+J3                      GROVE-CONNECTOR-DIP-320110033 HW4-2.0                    Connector-new  1
+J4                      GROVE-CONNECTOR-DIP-320110033 HW4-2.0                    Connector-new  1
+J5                      GROVE-CONNECTOR-DIP-320110033 HW4-2.0                    Connector-new  1
+J6                      GROVE-CONNECTOR-DIP-320110033 HW4-2.0                    Connector-new  1
+J7                      GROVE-CONNECTOR-DIP-320110033 HW4-2.0                    Connector-new  1
+J8                      GROVE-CONNECTOR-DIP-320110033 HW4-2.0                    Connector-new  1
+J9       DNP            HEADER-2P-50/30MIL            H2-2.0-C50D30MIL           Connector-new  1
+J10      DNP            HEADER-7P-2.54                H7-2.54                    Connector-new  1
+J11      DNP            HEADER-7P-2.54                H7-2.54                    Connector-new  1
+L2       0.47uH         L-MPM201610SR33_T             L201610                    Discrete-new   1
+L3       2.2uH          INDUCTOR/FERRITE-BEAD'0805'   L0805                      Discrete-new   1
+R1       0R             RES-0402                      R0402                      Discrete-new   1
+R2       DNP            RES-0402                      R0402                      Discrete-new   1
+R5       0R             RES-0402                      R0402                      Discrete-new   1
+R6       DNP            RES-0402                      R0402                      Discrete-new   1
+R15      0R             R-0402                        R0402                      Discrete-small 1
+R16      DNP            R-0402                        R0402                      Discrete-small 1
+R17      2K             R-0402                        R0402                      Discrete-small 1
+R18      0R             R-0402                        R0402                      Discrete-small 1
+R19      2.4K 1%        R-0402                        R0402                      Discrete-small 1
+R20      2.4K 1%        R-0402                        R0402                      Discrete-small 1
+R40      100K_1%        R-0402                        R0402                      Discrete-small 1
+R41      22K_1%         R-0402                        R0402                      Discrete-small 1
+SW1                     SWITCH-2CH-6P-311030004       SW6-2.54-9.0X3.5X3.2MM-90D Switch         1
+U1                      MOUDLE-SEEEDUINO-XIAO-DIP     MOUDLE14P-2.54-21X17.8MM   moudle-new     1
+U2       DNP            FLASH-W25X80-SS               SOIC8-1.27-5.3X5.3MM       IC-new         1
+U3       ETA3410        CONVERTER-ETA3410             DFN8G-0.5-2X2MM            IC-new         1
+U5       ETA6003        PMIC-ETA6003-310990023        QFN16GA-0.5-3X3MM          IC-new         1

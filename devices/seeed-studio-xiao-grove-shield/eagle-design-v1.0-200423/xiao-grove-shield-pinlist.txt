@@ -1,0 +1,198 @@
+Pinlist
+
+Exported from xiao-grove-shield.sch at 31.10.22 01:53
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Part     Pad      Pin        Dir      Net
+
+C1       1        1          pas      GND
+         2        2          pas      3V3
+
+C10      1        1          pas      GND
+         2        2          pas      3V3
+
+C15      1        1          pas      GND
+         2        2          pas      VSYS
+
+C16      1        1          pas      GND
+         2        2          pas      3V3
+
+C22      1        1          pas      5V
+         2        2          pas      GND
+
+C23      1        1          pas      5V
+         2        2          pas      GND
+
+C24      1        1          pas      VSYS
+         2        2          pas      GND
+
+C25      1        1          pas      N$4
+         2        2          pas      GND
+
+C28      1        1          pas      GND
+         2        2          pas      VSYS
+
+D16      +        +          pas      VSYS
+         -        -          pas      N$30
+
+J1       1        1          io       A0_D0
+         2        2          io       A1_D1
+         3        3          io       3V3
+         4        4          io       GND
+
+J2       1        1          io       A1_D1
+         2        2          io       A2_D2
+         3        3          io       3V3
+         4        4          io       GND
+
+J3       1        1          io       A2_D2
+         2        2          io       A3_D3
+         3        3          io       3V3
+         4        4          io       GND
+
+J4       1        1          io       A5_D5_SCL
+         2        2          io       A4_D4_SDA
+         3        3          io       3V3
+         4        4          io       GND
+
+J5       1        1          io       A5_D5_SCL
+         2        2          io       A4_D4_SDA
+         3        3          io       3V3
+         4        4          io       GND
+
+J6       1        1          io       A7_D7_RX
+         2        2          io       A6_D6_TX
+         3        3          io       3V3
+         4        4          io       GND
+
+J7       1        1          io       A8_D8_SCK
+         2        2          io       A9_D9_MISO
+         3        3          io       3V3
+         4        4          io       GND
+
+J8       1        1          io       A9_D9_MISO
+         2        2          io       A10_D10_MOSI
+         3        3          io       3V3
+         4        4          io       GND
+
+J9       1        1          io       GND
+         2        2          io       N$2
+
+J10      1        1          io       A0_D0
+         2        2          io       A1_D1
+         3        3          io       A2_D2
+         4        4          io       A3_D3
+         5        5          io       A4_D4_SDA
+         6        6          io       A5_D5_SCL
+         7        7          io       A6_D6_TX
+
+J11      1        1          io       5V
+         2        2          io       GND
+         3        3          io       3V3
+         4        4          io       A10_D10_MOSI
+         5        5          io       A9_D9_MISO
+         6        6          io       A8_D8_SCK
+         7        7          io       A7_D7_RX
+
+L2       1        1          pas      N$29
+         2        2          pas      3V3
+
+L3       1        1          pas      N$26
+         2        2          pas      VSYS
+
+R1       1        1          pas      GND
+         2        2          pas      N$1
+
+R2       1        1          pas      5V
+         2        2          pas      N$1
+
+R5       1        1          pas      A1_D1
+         2        2          pas      N$3
+
+R6       1        1          pas      3V3
+         2        2          pas      N$3
+
+R15      1        1          pas      N$37
+         2        2          pas      GND
+
+R16      1        1          pas      5V
+         2        2          pas      N$33
+
+R17      1        1          pas      N$30
+         2        2          pas      N$31
+
+R18      1        1          pas      N$33
+         2        2          pas      GND
+
+R19      1        1          pas      N$36
+         2        2          pas      GND
+
+R20      1        1          pas      N$34
+         2        2          pas      GND
+
+R40      1        1          pas      N$21
+         2        2          pas      3V3
+
+R41      1        1          pas      GND
+         2        2          pas      N$21
+
+SW1      CH1A     CH1A       io                *** unconnected ***
+         CH1B     CH1B       io       N$2
+         CH2A     CH2A       io                *** unconnected ***
+         CH2B     CH2B       io                *** unconnected ***
+         COM1     COM1       io       N$4
+         COM2     COM2       io                *** unconnected ***
+
+U1       1        PA02_A0_D0 io       A0_D0
+         2        PA4_A1_D1  io       A1_D1
+         3        PA10_A2_D2 io       A2_D2
+         4        PA11_A3_D3 io       A3_D3
+         5        PA8_A4_D4_SDA io       A4_D4_SDA
+         6        PA9_A5_D5_SCL io       A5_D5_SCL
+         7        PB08_A6_D6_TX io       A6_D6_TX
+         8        PB09_A7_D7_RX io       A7_D7_RX
+         9        PA7_A8_D8_SCK io       A8_D8_SCK
+         10       PA5_A9_D9_MISO io       A9_D9_MISO
+         11       PA6_A10_D10_MOSI io       A10_D10_MOSI
+         12       3V3        io       3V3
+         13       GND        io       GND
+         14       5V         io       5V
+
+U2       1        /CS        io       N$3
+         2        DO         io       A9_D9_MISO
+         3        /WP        io       3V3
+         4        GND        io       GND
+         5        DIO        io       A10_D10_MOSI
+         6        CLK        io       A8_D8_SCK
+         7        /HOLD      io       3V3
+         8        VCC        io       3V3
+
+U3       1        PGND       io       GND
+         2        SW         io       N$29
+         3        AGND       io       GND
+         4        FB         io       N$21
+         5        EN         io       VSYS
+         6        MODE       io       GND
+         7        AVIN       io       VSYS
+         8        PVIN       io       VSYS
+         9        PAD        io       GND
+
+U5       1        SYS        io       VSYS
+         2        IN         io       5V
+         3        SW         io       N$26
+         4        SW         io       N$26
+         5        PGND       io       N$37
+         6        ENB        io       GND
+         7        NTC        io       N$33
+         8        GND        io       GND
+         9        STAT       io       N$31
+         10       GND        io       GND
+         11       ISET1      io       N$34
+         12       ISET2      io       N$36
+         13       USB_DET    io       N$1
+         14       BATT       io       N$4
+         15       SYS        io       VSYS
+         16       BATT       io       N$4
+         PAD      PAD        io       GND
+
