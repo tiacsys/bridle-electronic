@@ -1,0 +1,18 @@
+Others
+======
+
+* 27C1024 64Kx16 UV erasable EPROM (≤150ns):
+  https://www.jameco.com/Jameco/Products/ProdDS/203641AMD.pdf
+  [27C1024.png]
+
+* 62256 32Kx8 static RAM (≤70ns):
+  https://www.farnell.com/datasheets/1674430.pdf
+  [62256.png]
+
+* MCP100 Supervisory circuit:
+  http://ww1.microchip.com/downloads/en/DeviceDoc/11187f.pdf
+  [MCP100.png]
+
+* CD4021B shift-register (similar to game controller)
+  https://www.ti.com/lit/ds/symlink/cd4021b.pdf
+  [4021B.png]

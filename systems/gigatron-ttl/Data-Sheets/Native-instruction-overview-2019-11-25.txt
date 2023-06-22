@@ -1,0 +1,15 @@
+Instruction set
+===============
+
+The native 8-bit instruction set has 17 instructions:
+
+	Memory load/store:	ld st
+	Logical operations:	anda ora xora
+	Arithmetic operations:	adda suba
+	Unconditional jumps:	jmp bra
+	Conditional jumps:	bgt beq bge blt bne ble
+	Others:			nop ctrl
+
+The instruction encoding is defined by this table:
+
+[Native-instruction-overview-2019-11-25.png]

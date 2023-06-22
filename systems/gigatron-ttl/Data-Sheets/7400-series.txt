@@ -1,0 +1,54 @@
+7400 series
+===========
+
+* 74HCT04 Hex inverter:
+  http://www.ti.com/lit/ds/symlink/sn74hct04.pdf
+  [7404.png]
+
+* 74HCT32 Quad 2-input OR gate:
+  http://www.ti.com/lit/ds/symlink/sn74hct32.pdf
+  [7432.png]
+
+* 74HCT138 3-to-8 decoder:
+  http://www.ti.com/lit/ds/symlink/sn74hct138.pdf
+  [74138.png]
+
+* 74HCT139 Dual 2-to-4 decoder:
+  http://www.ti.com/lit/ds/symlink/sn74hct139.pdf
+  [74139.png]
+
+* 74HCT153 Dual 4-to-1 multiplexer:
+  http://www.ti.com/lit/ds/symlink/cd74hc153.pdf
+  [74153.png]
+
+* 74HCT157 Quad 2-to-1 multiplexer:
+  http://www.ti.com/lit/ds/symlink/sn74hct157.pdf
+  [74157.png]
+
+* 74HCT161 4-bit binary counter:
+  http://www.ti.com/lit/ds/symlink/cd74hct163.pdf
+  [74161.png]
+
+* 74HCT240 Octal inverting buffer with tri-state outputs:
+  http://www.ti.com/lit/ds/schs167e/schs167e.pdf
+  [74240.png]
+
+* 74HCT244 Octal buffer with tri-state outputs:
+  http://www.ti.com/lit/ds/symlink/sn74hct244.pdf
+  [74244.png]
+
+* 74HCT273 Octal D-type flip-flop with reset:
+  http://www.ti.com/lit/ds/symlink/cd74hc273.pdf
+  [74273.png]
+
+* 74HCT283 4-bit binary adder with fast carry:
+  http://www.ti.com/lit/ds/symlink/cd74hct283.pdf
+  [74283.png]
+
+* 74HCT377 Octal D-type flip-flip with clock enable:
+  http://www.ti.com/lit/ds/symlink/sn74hct377.pdf
+  [74377.png]
+
+* 74HC595 8-bit shift register with tri-state output:
+  http://www.ti.com/lit/ds/symlink/sn74hc595.pdf
+  [74595.png]
