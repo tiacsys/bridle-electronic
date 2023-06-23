@@ -1,0 +1,1252 @@
+
+ MYCPU-SYSTEM KERNEL FUNCTION REFERENCE             05.06.2002 Dennis Kuschel
+===============================================================================
+
+
+Content:
+
+        1. Abbreviations
+        2. CONIO.HSM:     Console Functions (keyboard, screen)
+        3. STDIO.HSM:     Standard I/O Functions (file system / other devices)
+        4. MEM.HSM:       Memory Management
+        5. TIME.HSM:      Time and Date
+        6. CTYPE.HSM:     Character check / String evaluation
+        7. DOS.HSM:       Disk Operating System (Filesystem) functions
+        8. CODE.HSM:      Program execution  (Library support)
+        9. SYS.HSM:       System Routines
+       10. SCREEN.HSM:    Screen control functions (mainly for VGA Display)
+       11. INTERRUPT.HSM: Interrupt / Timer control functions
+       12. Other files:   CHARS.HSM, DEVICES.HSM and REGISTER.HSM
+
+
+       NOTE: Since all kernal functions were accessed through a jump-table,
+             the assembly commands JSR() and JMP() must be used to call
+             a kernal routine. Example:
+             Use  JSR (KERN_PRINTCHAR)  to print out a character, or
+                  JMP (KERN_EXITTSR)    to terminate a TSR program.
+
+
+
+
+1. Abbreviations
+-------------------------------------------------------------------------------
+
+  A       Accu
+  A/X/Y   Accu, X-Register and Y-Register: This three registers contain
+          a 24 bit value. Accu = bits 0..7, X = bits 8..15, Y = bits 16..23
+  C       Carry Flag. This flag can be set (1) or not set (0)
+  Ptr     16 bit Pointer
+  V       Sign Flag. This flag can be set (1) or not set (0)
+  X       X - Register
+  XY      16bit value in the X- and Y-Register. X = bits 0..7, Y = bits 8..15
+  Y       Y - Register
+  Z       Zero Flag. This flag can be set (1) or not set (0)
+
+
+
+
+2. CONIO.HSM:  Console Functions (keyboard, screen)
+-------------------------------------------------------------------------------
+
+KERN_GETCH           Get a character from the keyboard. This function blocks
+                     until a character is available.
+                       INPUT : none
+                       OUTPUT: character code in Accu
+
+
+KERN_GETCRSRPOS      Returns the actual cursor position on the screen.
+                     Note: When a terminal program is used as output, the
+                     returned line position is not correct.
+                       INPUT : none
+                       OUTPUT: Accu = row, X = line
+
+
+KERN_GETSCREENSIZE   Returns the actual screen size (resolution in characters).
+                       INPUT : none
+                       OUTPUT: X = count of rows, Y = count of lines
+
+
+KERN_GETFREELINES    Returns the count of unused lines until the current line.
+                       INPUT : none
+                       OUTPUT: Accu = count of free lines
+
+
+KERN_GSSTDOUTVECT    Gets/sets the standard output vector (pointer to print
+                     routine) for the KERN_PRINTCHAR function
+                     
+                     get standard output vector:
+                       INPUT : Carry = 0
+                       OUTPUT: XY = ptr to function, A = number of ROM page
+
+                     set standard output vector:
+                       INPUT : Carry = 1
+                               XY = ptr to function, A = number of ROM page
+                       OUTPUT: none
+
+
+KERN_GSTERMINAL      Gets/sets the type of terminal for console input/output
+
+                     get terminal type:
+                       INPUT : Carry = 0
+                       OUTPUT: Accu = type of terminal
+
+                     set terminal type:
+                       INPUT : Carry = 1, Accu = type of terminal
+
+                     The terminal type is coded as bitmask, but only the
+                     following values make sense:
+                        00h  ANSI
+                        04h  VT100
+                        10h  HYPERTERM  (Hyperterminal in ANSI mode)
+                        20h  XTERM      (eg. Linux xterm shell)
+                        30h  LINUX      (eg. Linux text console)
+
+
+KERN_INPUT           Read a string from the console.
+                       INPUT : Accu = flags, X = max. string length (only
+                               when flag INPUTFLAG_SIZE is set)
+                       OUTPUT: XY = ptr to input buffer containing the
+                               zero terminated string
+
+                     The following flags are defined (bitmask):
+                        INPUTFLAG_HISTORY  - enable the input history
+                        INPUTFLAG_SIZE     - set maximum size of input field
+                                             (string length, X register)
+                        INPUTFLAG_QUOTE    - allow quoted mode (see C64 basic)
+                        INPUTFLAG_LINE80   - allow 80 characters in a line
+                                             (used for 40 row LCD displays)
+                        INPUTFLAG_TABKEY   - Enable tabulator key feature.
+                                             Note that the corresponding vector
+                                             must be set before using this
+                                             flag (see KERN_SETINPSPVECT)
+                        INPUTFLAG_NOBORDER - On non terminal consoles like
+                                             CRT or LCD, the line length
+                                             is not limmited to the right
+                                             screen border (80 lines).
+
+
+KERN_KBHIT           Test if a key was pressed and a character is in the
+                     input buffer.
+                       INPUT : none.
+                       OUTPUT: Accu=1 and Z=0 when a key was pressed,
+                               else Accu=0 and Z=1
+
+
+KERN_PRINTCHAR       Print a character out to the screen / terminal.
+                       INPUT : Accu = character
+                       OUTPUT: none
+                       NOTE  : The function call does not change the
+                               content of the A/X/Y registers.
+                               (mostly, but not guaranteed...)
+
+
+KERN_PRINTHEX        Print a hexadecimal number.
+
+                     8 bit hexadecimal number:
+                       INPUT : Carry = 0, Accu = number
+                       OUTPUT: none
+                     
+                     16 bit hexadecimal number:
+                       INPUT : Carry = 1, XY = number
+                       OUTPUT: none
+
+
+KERN_PRINTDEZ        Print a 24 bit wide decimal number.
+                       INPUT : A/X/Y = number (A=lowest byte, Y=highest)
+                       OUTPUT: none
+
+
+KERN_PRINTSTR        Print a string from RAM.
+                       INPUT : XY = pointer to zero terminated string in RAM
+                       OUTPUT: none
+
+
+KERN_PRINTSTRR       Print a string from ROM.
+                       INPUT : XY = pointer to zero terminated string in ROM
+                       OUTPUT: none
+
+
+KERN_QUOTEMODE       Set type of quoted mode for print. This function is needed
+                     to be able to print quotation marks on the screen, which
+                     would normally toggle the quote mode on/off.
+                       INPUT : Accu = 00h: switch quoted mode off
+                               Accu = 80h: switch quoted mode on
+                               Accu = FFh: switch quoted mode off, disallow
+                                           automatic switch on
+                       OUTPUT: none
+
+
+KERN_SETCONSOLE      Set console for input/output. A console device can be a
+                     keyboard, crt screen, LCD or a terminal program.
+                       INPUT : Accu = console type
+                               (low nibble: input, high nibble: output)
+                       OUTPUT: none
+                       
+                     following console types are defined:
+                       CON_DISP_LCD     - use LCD for output
+                       CON_DISP_SCREEN  - use CRT for output
+                       CON_DISP_TTY     - use terminal program for output
+                       CON_DISP_NONE    - disable output
+                       CON_KEYB_KEYB    - use local keyboard for input
+                       CON_KEYB_TTY     - use terminal program for input
+                       CON_KEYB_NONE    - disable input
+                     
+                     The default is (CON_DISP_SCREEN | CON_KEYB_KEYB).
+
+
+KERN_SETINPSPVECT    This function sets the vector which is called when the
+                     tabulator key is pressed while string input (see function
+                     KERN_INPUT).
+                       INPUT : XY = vector (function pointer)
+                       OUTPUT: none
+                       
+                     When the vector is called after pressing the tab key,
+                     the X and Y registers contain a pointer to the input
+                     buffer. The buffer content can be changed through the
+                     function. After changing the content, the function
+                     should return with carry-flag set. Otherwise the
+                     carry-flag should be cleared on function return.
+                     A set carry flag forces the input function to print
+                     the changed buffer content to the screen.
+
+
+KERN_SETINPUTMODE    Sets the type of input (see KERN_INPUT/KERN_FILEINPUT)
+                       INPUT : Accu = input mode
+                       OUTPUT: none
+
+                     following types are defined:
+                       INPMODE_BASIC, INPMODE_BASICRUN, INPMODE_KERNALSHELL
+
+                     This function is obsolete and is only used by the
+                     kernel itself!
+
+
+KERN_TESTCTRLC       Checks for a break condition (CTRL+C pressed)
+                       INPUT : none
+                       OUTPUT: returns with C=1 and Z=1 when CTRL+C was pressed
+
+
+KERN_UNGETCH         Puts a character into the keyboard buffer. Only one
+                     character can be ungetch'ed at the time.
+                     Note: An ungetch with the CTRL+C character (03h) rises
+                     a break condition (see KERN_TESTCTRLC)
+                       INPUT : Accu = character
+                       OUTPUT: none
+
+
+
+
+3. STDIO.HSM:  Standard I/O Functions (file system / other devices)
+-------------------------------------------------------------------------------
+
+KERN_FCLOSE          Close a file.
+                       INPUT : A = filehandle
+                       OUTPUT: none
+
+
+KERN_FGETC           Get a single character from a file.
+                       INPUT : X = filehandle
+                       OUTPUT: Accu = character and Carry = 0 on success.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+                               If the function fails, Carry will be set.
+
+
+KERN_FILEBLOCKRDWR   Read or write a block of data from/to a file.
+                     This function works only with file devices
+                     (filesystem, remotefs driver).
+                       INPUT : A = filehandle, XY = ptr to a struct (4 bytes):
+                                 1 word = ptr to databuffer
+                                 1 word = buffer size
+                               To read data, set Carry to 0.
+                               To write data, set Carry to 1.
+                       OUTPUT: This function returns with Carry=0 on success.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+                               When the function was called to write data,
+                               the second word in the struct contains the
+                               count of bytes successfully written.
+
+
+KERN_FOPEN           Open a file or device.
+                       INPUT : Accu = flags, XY = ptr to a zeroterminated
+                               string describing the file or device.
+                                 example for file:  "8:/temp/data.bin"
+                                 example for device: "com1:9600,8,1,n,n"
+                       OUTPUT: Accu = handle to file.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+                               If the function failed to open the file,
+                               the returned handle is zero.
+
+                     open-flags:
+                       FOPEN_RD - open file for read access
+                       FOPEN_WR - open file for write access
+                       FOPEN_RW - open file for read and write
+                       FOPEN_AP - open file for append (write)
+                     Note: The flags can be combined by using the OR operator.
+
+
+KERN_FPUTC           Put a single character to a file.
+                       INPUT : character in Accu, X = filehandle
+                       OUTPUT: This function returns with Carry = 0 on success.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+
+
+KERN_FTELLSEEK       Tell: Returns the position of the read/write file pointer.
+                     Seek: Sets the file pointer to a new position (calculated
+                     from the beginning of the file).
+                     
+                     Tell:
+                       INPUT : Carry = 0, Accu = filehandle
+                       OUTPUT: A/X/Y = position of the filepointer (24 bit),
+                               Carry = 0 on success.
+
+                     Seek:
+                       INPUT : Carry = 1, Accu = filehandle, XY = pointer to
+                               a 3 byte struct in memory containing the
+                               new fileposition (24 bit value)
+                       OUTPUT: Carry = 0 on success.
+
+
+KERN_IOCTL           Calls a driver specific I/O-control function.
+                       INPUT : X = device number, Accu = function code,
+                               Y = parameter.
+                       OUTPUT: returns data in A/X/Y and Carry.
+
+
+KERN_RSIOSTATUS      Read or set the IO-Status byte.
+
+                     read status:
+                       INPUT : Carry = 0
+                       OUTPUT: Accu = status
+
+                     write status:
+                       INPUT : Carry = 1, Accu = status
+                       OUTPUT: none.
+
+                     The status byte is coded as bitmask.
+                     Following bits are defined:
+                       STATUS_WRITETIMEOUT    - device write error
+                       STATUS_READTIMEOUT     - device read error
+                       STATUS_FAIL            - common device error
+                       STATUS_DEVICETYPEERROR - wrong device for operation
+                       STATUS_USERERROR       - user defined error bit
+                       STATUS_FILENOTFOUND    - file or command not found
+                       STATUS_EOI             - End Or Identify (end of file)
+                       STATUS_DEVNOTPRESENT   - device not present
+
+
+KERN_SERIALIN        Reads a byte from a serial interface (RS232).
+                     This is a low level function which can also be accessed
+                     through the standard file I/O  (KERN_FOPEN with "com1:").
+                       INPUT : Carry = 0: port1,  Carry = 1: port2.
+                       OUTPUT: byte in Accu, C=0 on success (=byte available)
+
+
+KERN_SERIALOUT       Sends a character to a serial interface (RS232)nal). 
+                       INPUT : C=0: port1, C=1: port2. Accu = character.
+                       OUTPUT: Carry = 0 on success.
+
+
+KERN_SERIALSETUP     Sets up the serial ports.
+                       INPUT : Carry = 0: setup port1, Carry = 1: setup port2.
+                               Accu = handshake (0=none, 1=hardware, 2=softw.)
+                               X : low-nibel = data bits, hi-nible = stop bits
+                               Y = parity: 0=none, 1=odd, 2=even
+                       OUTPUT: Carry = 0 on success
+
+
+KERN_SERREGISTERBH   Registers a bottom-halfe routine for a serial port.
+                     The routine is then called every time a character is
+                     received through the serial port. The bottom halfe
+                     routine gets the character in Accu.
+                       INPUT : Carry = 0: register for port1, Carry = 1: port2
+                               XY = pointer to the bottom half routine. The
+                               bottom halfe routine must reside in the same
+                               ROM-page where this function call came from.
+                               Call with XY=NULL to unregister a bottom halfe.
+                       OUTPUT: none
+
+
+KERN_SERSETBAUD      Set the baudrate for a serial port.
+                       INPUT : Carry = 0: Port1, Carry = 1: Port2
+                               A/X/Y = baudrate (A=lo,X=mid,Y=hi =24bit)
+                       OUTPUT: none
+
+
+KERN_SERSETPARAMS    Setup serial parameters for com1 or com2.
+                     This function implements a string interpreter.
+                       INPUT : Carry = 0: Port1, Carry = 1: Port2
+                               XY = pointer to parameter string
+                       OUTPUT: Carry = 0 on success
+
+                     The string has the following format:
+                       e.g. "19200,8,1,n,h" -> 19200 baud, 8 databits,
+                            1 stopbit, no parity, hardware handshake.
+                       other flags: e=even, o=odd, s=software handshake
+
+
+
+
+4. MEM.HSM:  Memory Management
+-------------------------------------------------------------------------------
+
+KERN_MALLOCFREE      This function allocates or frees conventional memory.
+                     malloc:
+                       INPUT : Carry = 1, XY = count of bytes (max. 32kb)
+                       OUTPUT: XY=pointer to allocated memory, C=0 on success.
+                     free:
+                       INPUT : Carry = 0, XY = pointer to allocated memory
+                       OUTPUT: none
+
+
+KERN_ALLOCFREERAMP   This allocates or frees a RAM page of 16 kbyte.
+
+                     alloc:
+                       INPUT : Carry = 1, Accu = count of RAM-pages
+                       OUTPUT: Accu = handle to RAM-page, Carry = 0 on success
+
+                     free:
+                       INPUT : Carry = 0, Accu = handle to RAM-page
+                       OUTPUT: none.
+
+                     Note:  The appropriated RAM-Page is selected by writing
+                            the RAM-page handle into the Register REG_RAMPAGE.
+                            The RAM-page can be accessed through the memory
+                            area ADR_RAMPAGE_START - (ADR_RAMPAGE_START+3FFF).
+
+
+
+
+5. TIME.HSM:  Time and Date
+-------------------------------------------------------------------------------
+
+KERN_GETSETTIME      Reads or sets the system time.
+
+                     read time:
+                       INPUT : Carry = 0
+                       OUTPUT: Accu = hour, X = minute, Y = second
+
+                     set time:
+                       INPUT : Carry = 1, Accu = hour, X = minute, Y = second
+                       OUTPUT: none
+
+
+KERN_GETSETDATE      Reads or sets the system date.
+
+                     read date:
+                       INPUT : Carry = 0
+                       OUTPUT: Accu = day, X = month, Y = year since 2000
+
+                     set data:
+                       INPUT : Carry = 1,  Accu = day, X = month, Y = year
+                       OUTPUT: none
+
+
+KERN_INSDELTIMER     Inserts/deletes a timer function to/from the timer chain.
+                     The timer chain is executed 35.15625 times per second.
+
+                     Insert function to timer chain:
+                       INPUT : Carry = 1, XY = pointer to timer struct.
+                               Note: The function must reside in ROMPAGE_RAM0.
+                       OUTPUT: none
+
+                     Remove function from timer chain:
+                       INPUT : Carry = 0, XY = pointer to timer struct.
+                       OUTPUT: none
+                     
+                     The timer struct has the following format:
+                        struct {
+                          WORD  ptr_to_next_timer_struct
+                          WORD  ptr_to_timer_function
+                        };
+                      The first parameter is managed by the system
+                      and does not need to be set.
+
+
+
+6. CTYPE.HSM:  Character check / String evaluation
+-------------------------------------------------------------------------------
+
+KERN_ISPRINTABLE     Checks if a character is printable (that it is not a
+                     steering character)
+                       INPUT : Accu = character
+                       OUTPUT: returns with Z=0 when character is printable
+
+
+KERN_ISCTRLCHAR      Checks if a character is a control character.
+                       INPUT : Accu = character
+                       OUTPUT: returns with Z=0 when character is printable
+
+
+KERN_ISALPHA         Checks if a character is a letter. (=alphanumeric)
+                       INPUT : Accu = character
+                       OUTPUT: returns with Z=0 when character alphanumeric
+
+
+KERN_ISDIGIT         Checks if a character is a number. (=digit)
+                       INPUT : Accu = character
+                       OUTPUT: returns with Z=0 when character is a digit
+
+
+KERN_ASCIIPETSI      Converts a character from PETSI to ASCII or vice versa.
+
+                     PETSI to ASCII:
+                       INPUT : Carry = 0, Accu = character in PETSI code
+                       OUTPUT: Accu = character in ASCII code
+
+                     ASCII to PETSI:
+                       INPUT : Carry = 1, Accu = character in ASCII code
+                       OUTPUT: Accu = character in PETSI code
+
+
+KERN_STRING2NUMBER   Converts a string to a number of maximum 24 bits.
+                     The zero terminated string may contain a dezimal,
+                     hexadecimal or binary number.
+                       INPUT : XY = pointer to string
+                       OUTPUT: A/X/Y = 24 bit number
+
+
+
+
+7. DOS.HSM:  Disk Operating System (Filesystem) functions
+-------------------------------------------------------------------------------
+
+KERN_ACCESS          Tests if a file is accessible.
+                       INPUT : A = device, XY = pointer to openstring.
+                               format of string:   "path/filename,parameters"
+                               Parameters are ",r" (read), ",w" (write) or
+                               ",a" (append). Parameters can be combined.
+                       OUTPUT: C = 0 on success (no errors in parameters).
+                               The access status can be retrived by
+                               calling the function KERN_RSIOSTATUS.
+
+
+KERN_CHECKDEVICE     Check a filesystem device (like "chkdsk" under MS-DOS)
+                       INPUT : C=0: check FAT, C=1: check file structure.
+                               Accu = device number (8 - 15).
+                       OUTPUT: Carry = 0 on success.
+
+
+KERN_DELETEFILE      Delete a file.
+                       INPUT : Accu = devicenumber, XY = pointer to zero
+                               terminated string containing the path and file
+                               to delete (joker signes are allowed).
+                       OUTPUT: C=0 on success. C=1 signalizes an error, the
+                               error code is in Accu (see DEVICES.HSM).
+
+
+KERN_FILEBLOCKRDWR   Read or write a block of data from/to a file.
+                     This function works only with file devices
+                     (filesystem, remotefs driver).
+                       INPUT : A = filehandle, XY = ptr to a struct (4 bytes):
+                                 1 word = ptr to databuffer
+                                 1 word = buffer size
+                               To read data, set Carry to 0.
+                               To write data, set Carry to 1.
+                       OUTPUT: This function returns with Carry=0 on success.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+                               When the function was called to write data,
+                               the second word in the struct contains the
+                               count of bytes successfully written.
+
+
+KERN_FILECLOSE       Close a file.
+                       INPUT : A = filehandle
+                       OUTPUT: none
+
+
+KERN_FILECLOSEALL    Close all open files.
+                       INPUT : none
+                       OUTPUT: none
+
+
+KERN_FILEGET         Reads a single character from a file.
+                       INPUT : X = device, Y = secondary address
+                       OUTPUT: Accu = character and Carry = 0 on success.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+
+
+KERN_FILEGETDEVICE   Converts a file handle into a device address.
+                       INPUT :  A = logical file number (="handle")
+                       OUTPUT:  X = devicenumber, Y = secondary address
+                                Carry = 0 on success
+
+
+KERN_FILEOPEN        Opens a file. Two modes are available: a) open a simple
+                     device, like console or line printer  b) open a file system
+                     device or a device with extended parameters.
+
+                     simple open:
+                       INPUT : Carry = 0, Accu = logical file number,
+                               X = device number, Y = secondary address
+                       OUTPUT: Carry = 0 on success
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+
+                     extendet open (openex):
+                       INPUT : Carry = 1, Accu = logical file number,
+                               X = device number, Y = secondary address
+                       OUTPUT: Carry = 0 on success
+                       NOTE  : After the openex call a zero terminated
+                               parameter string must be sent to the device
+                               using KERN_FILEPUT. 
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+
+
+KERN_FILEPUT         Puts a single character to a file.
+                       INPUT : Accu = character, X = device, Y = secondary address
+                       OUTPUT: returns with Carry = 0 on success.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+
+
+KERN_FINDFIRSTNEXT   Find first / next directory entry.
+
+                     Find first:
+                       INPUT : Carry = 1, Accu = device, XY = ptr to a
+                               findfn-structure. The findfn-structure must
+                               be set up to match the first wished directory
+                               entry (set file attributes and filename).
+                       OUTPUT: returns with Carry = 0 on success. The findfn-
+                               structure contains the first directory entry.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+
+                     Find next:
+                       INPUT : Carry = 0, Accu = device, XY = ptr to a
+                               findfn-structure
+                       OUTPUT: returns with Carry = 0 on success. The findfn-
+                               structure contains the next directory entry.
+                               The I/O-Status can be retrived by calling
+                               the function KERN_RSIOSTATUS.
+
+                     Format of structure findfn:  (max. size = 256 bytes)
+                     byte-offset,  content
+                         0   systemdata[21]   // do not attache
+                         21  time_hour
+                         22  time_min
+                         23  time_sec
+                         24  date_year
+                         25  date_month
+                         26  date_day
+                         27  filesize[3]
+                         30  attributes       // input: flags to search for
+                                              //        (0 = all files),
+                                              // output: flags of found file
+                         31  filenameAndPath[17...]  // input: mask,
+                                                     // output: found filename
+
+                        The following attributes (flags) are defined:
+                          FILEATTRIB_D  - directory
+                          FILEATTRIB_A  - archive
+                          FILEATTRIB_H  - hidden
+                          FILEATTRIB_R  - read only
+
+
+KERN_FORMATDEVICE    Formats a filesystem device. This prepares a device
+                     for fileaccess. (Attention! All data will be deleted!)
+                       INPUT : Accu = device, XY = pointer to new disk label.
+                       OUTPUT: returns with C=0 on success.
+
+
+KERN_FSTAT           Get file status (creation date, filesize and attributes).
+                       INPUT : Call with XY = ptr to filename and C = 0 when
+                               devicenumber is stored in the filename, else
+                               call with C = 1 and Accu = device number.
+                       OUTPUT: C = 0 on success, XY = ptr to struct findfn+21
+                               (see KERN_FINDFIRSTNEXT for struct findfn)
+
+
+KERN_GETSETDEVDIR    Gets or sets the actual (default) directory (path) of a
+                     filesystem device.
+
+                     Get actual path:
+                       INPUT : Carry = 0, Accu = device, XY = ptr to buffer
+                               in which the pathstring will be stored.
+                       OUTPUT: returns with C = 0 on success.
+
+                     Set actual path:
+                       INPUT : Carry = 1, Accu = device, XY = ptr to
+                               string describing the new default path
+                       OUTPUT: returns with C = 0 on success.
+
+
+KERN_GETSETATTRIB    Gets or sets the attributes of a file.
+
+                     Get attributes:
+                       INPUT : Carry = 0, Accu = device, XY = ptr to a
+                               gsattr-structure, setup with path and filename
+                       OUTPUT: The function fills data into the gsattr-struct.
+                               It returns with C = 0 on success.
+
+                     Set attributes:
+                       INPUT : Carry = 1, Accu = device, XY = ptr to a
+                               gsattr-structure, setup with path+filename
+                               and attributes to set/clear
+                       OUTPUT: returns with C = 0 on success.
+
+                     Format of structure findfn:  (max. size = 256 bytes)
+                     byte-offset,  content
+                         0  flags           // input: flags describing what
+                                            // attributes should be set
+                                            // (mask of SETATTR_xxx flags)
+                         1  time_hour
+                         2  time_min
+                         3  time_sec
+                         4  date_year
+                         5  date_month
+                         6  date_day
+                         7  attr_to_set     // input: mask of flags to set
+                                            // output: flags of file
+                         8  attr_to_clear   // input: mask of flags to clear
+                         9  filenameAndPath[17...] //input: filename(w/ joker)
+
+                     The following file attributes (flags) are defined:
+                          FILEATTRIB_D  - directory
+                          FILEATTRIB_A  - archive
+                          FILEATTRIB_H  - hidden
+                          FILEATTRIB_R  - read only
+
+                     The following bits are allowed for the flag field:
+                          SETATTR_TIME  - set time
+                          SETATTR_DATE  - set date
+                          SETATTR_ATTR  - set file attributes
+
+
+KERN_GETFREESPACE    Returns the free (disk-)space of a file device.
+                       INPUT : Accu = device number
+                       OUTPUT: A/X/Y = free space in bytes (24 bits)
+                               returns with Carry = 0 on success.
+
+
+KERN_GETSETDEVICE    Gets or sets the actual (default) file device.
+
+                     Get device number of actual device:
+                       INPUT : Carry = 0
+                       OUTPUT: Accu = device number
+
+                     Set the actual device:
+                       INPUT : Carry = 1, Accu = device number
+                       OUTPUT: Accu = device number, returns C = 0 on success
+
+
+KERN_GETDEVFROMSTR   Extracts the device number from a path-string.
+                       INPUT : XY = pointer to the zero terminated string
+                       OUTPUT: XY = ptr to char after ':',
+                               Accu = device number, Carry = 0 on success.
+
+
+KERN_GETSETENVVAR    Gets or sets an environment variable.
+
+                     Get the value of an environment variable:
+                       INPUT : Carry = 0, XY = ptr to buffer (256 bytes).
+                               The buffer must contain the name of the
+                               variable as zero terminated string.
+                       OUTPUT: XY = unchainged, the buffer contains the value
+                               of the variable (zero terminated string).
+                       NOTE:   If the input-buffer contains a leading zero on
+                               functioncall (that means no variable name is
+                               stored in the buffer), this function will
+                               return a pointer in XY which points to the
+                               beginning of the variable memory.
+
+                     Set the value of an environment variable:
+                       INPUT : Carry = 1, XY = ptr to buffer (256 bytes).
+                               The buffer must contain the name of the variable,
+                               followed by an '=' and the value of the variable.
+                               This string must be zero terminated.
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_IOCTL           Calls a driver specific I/O-control function.
+                       INPUT : X = device number, Accu = function code,
+                               Y = parameter.
+                       OUTPUT: returns data in A/X/Y and Carry.
+
+
+KERN_ISDEVPRESENT    Checks if a device is present.
+                       INPUT : Accu = device number
+                       OUTPUT: returns with Carry=0 when the device is present
+
+
+KERN_KSHELL          Starts a new kShell instance or executes a shell command.
+
+                     start a new shell instance:
+                       INPUT : Y=0 or XY points to an empty string zero.
+                       OUTPUT: none
+
+                     execute a shell command:
+                       INPUT : XY = pointer to zero terminated string
+                               containing the command.
+                       OUTPUT: none
+
+
+KERN_MKDIR_RMDIR     Makes or deletes a directory.
+
+                     Make a new directory:
+                       INPUT : Carry = 0, Accu = device number,
+                               XY = ptr to a pathstring
+                       OUTPUT: returns with Carry = 0 on success.
+                               The content of the pathstring is destroyed.
+
+                     Delete an existing directory:
+                       INPUT : Carry = 1, Accu = device number,
+                               XY = ptr to a pathstring
+                       OUTPUT: returns with Carry = 0 on success.
+                               The content of the pathstring is destroyed.
+
+
+KERN_RENAMEMOVE      Renames a file or moves a directory.
+
+                     Rename a file:
+                       INPUT : Carry = 0, Accu = device number,
+                               XY = ptr to a string containing the
+                               following:  old_path_and_filename + zero +
+                               new_path_and_filename + zero.
+                       OUTPUT: returns with Carry = 0 on success.
+
+                     Move a directory:
+                       INPUT : Carry = 1, Accu = device number,
+                               XY = ptr to a string containing the
+                               following:  oldpath + zero + newpath + zero
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_SHELLREGCMD     This function is exported by the kShell and is used to
+                     register a user defined shell command.
+
+                     Register a new shell command:
+                       INPUT : Carry = 1, XY = pointer to a command structure.
+                       OUTPUT: returns with Carry = 0 on success.
+                     
+                     Unregister a shell command:
+                       INPUT : Carry = 0, XY = pointer to a command structure.
+                       OUTPUT: none
+
+                     Format of the command structure:
+                        2 bytes containing zero,
+                        2 bytes as pointer to the command function,
+                        zero terminated string containing the command name.
+                     
+                     Note: This structure and the command function must reside
+                           in the ROMPAGE_RAM0 !
+
+
+KERN_UNDELETEFILE    This function is used to undelete a previous deleted file.
+                       INPUT : Accu = device number,
+                               XY = pointer to a buffer of 256 bytes containing
+                               only the filename of the file to undelete
+                               (zero terminated string).
+                       OUTPUT: Carry = 0 on success. The buffer contains now
+                               the path and filename of the undeleted file.
+
+
+
+8. CODE.HSM:  Program execution  (Library support)
+-------------------------------------------------------------------------------
+
+KERN_ADAPTOPCODES    This function adapts assembler code to its new starting
+                     address. Because this function takes a lot of parameters,
+                     it must be called several times to setup the final run.
+                       INPUT : function code in Accu, parameters in XY.
+                       OUTPUT: Accu = Accu + 1,
+                               returns with Carry = 0 on success.
+                     
+                     The following function codes are defined:
+                       Accu=0, XY=ptr:  set address of first valid OP-code
+                       Accu=1, XY=ptr:  set start address of assembler code
+                                        (that is the new address, where the
+                                        assembly code shall be moved to)
+                       Accu=2, XY=ptr:  set end address of assembler code
+                                        (= new start address plus length. 
+                                        This pointer should point to the last
+                                        byte of the last OP-Code)
+                       Accu=3, XY=ptr:  set original source address of the
+                                        assembly code.
+                       Accu=4, XY=ptr:  run code adaption
+
+
+KERN_CALLFROMROM     Call a kernelroutine from within a ROM-Page.
+                       INPUT : function pointer on stack (use PUSA #)
+                       OUTPUT: all registers and flags unchanged
+                       NOTE  : This function is obsolete, please use
+                               KERN_CALLROM instead
+
+
+KERN_CALLROM         This function makes it possible to call functions in
+                     mapped ROMs (so it is possible to call any function in
+                     any ROM-page from any ROM-page).
+                       INPUT : function pointer on stack,
+                               ROM-page-number on stack
+                       OUTPUT: all registers and flags unchanged
+
+
+KERN_EXECUTEFILE     Call this function to excecute a binary program file.
+
+                     Mode 1: execute file, close file on error:
+                       INPUT : Carry = 0, XY = ptr to string containing
+                               the filename plus parameters (commandline
+                               for the file).
+                       OUTPUT: returns with Carry = 0 on success.
+                               Else the Accu contains an error code
+                               (see DEVICES.HSM for error codes).
+
+                     Mode 2: execute file, do not close file on error:
+                       INPUT : Carry = 1, XY = ptr to string containing
+                               the filename plus parameters (commandline
+                               for the file).
+                       OUTPUT: returns with Carry = 0 on success.
+                               If C=1, then look to the Z-Flag:
+                               Z=1: real error, Accu contains the error code.
+                                    (see DEVICES.HSM for error codes)
+                               Z=0: Accu = filehandle of the yet open file,
+                                    XY=startaddress (first two bytes of
+                                    the file)
+
+
+KERN_EXITTSR         JUMP to this function to quit a TSR program.
+                     The program remains in memory.
+                       INPUT : Accu = return code
+                       OUTPUT: none.
+                       NOTE  : If you JSR to this function, then after
+                               the JSR command must directly follow a RTS.
+
+
+KERN_ISLOADED        Checks if a program is already loaded to memory.
+                     This is usefull to avoid multiple loading of
+                     libraries and TSR's.
+
+                     Mode 1: check if any program is loaded:
+                       INPUT : Carry = 1, XY = ptr to filename
+                       OUTPUT: returns with Carry = 1 if the specified
+                               program file was found in memory.
+
+                     Mode 2: check if the yet loaded TSR is already
+                             loaded to memory (a second instance was
+                             yet started...)
+                       INPUT : Carry = 0
+                       OUTPUT: returns with Carry = 1 if the currently
+                               running program is already loaded into memory.
+
+
+KERN_KILLPROGRAM     Removes a library, TSR or a normal program from memory.
+                       INPUT : XY = pointer to the PSB (program status block)
+                               of the program which shall be removed.
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_LIBCALL         Call a library function in a previous selected library
+                     (use KERN_LIBSELECT before calling this function).
+                       INPUT : Accu = number if library function (>0)
+                               X,Y = parameters for the library function
+                       OUTPUT: A,X,Y = data from the library function
+
+
+KERN_LIBDESELECT     Deselect a previous selected library. It is important
+                     to call this function from within a TSR/library,
+                     if the TSR or library uses other libraries. In a
+                     library every KERN_LIBCALL call must be enclosured 
+                     in a KERN_LIBSELECT / KERN_LIBDESELECT pair.
+                       INPUT : none
+                       OUTPUT: none
+
+
+KERN_LIBSELECT       Select a library for use. If the library is not yet
+                     loaded, the kernel will search for it and load it
+                     into memory. Searching order: first the actual
+                     directory, then the directory where the environment
+                     variable "LIB" points to.
+                       INPUT : Accu = number of the library.
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_LIBUNLOAD       Unload a no more used library.
+                       INPUT : Accu = number of the library.
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_SPECROMCALL     This function makes it possible to call functions in
+                     mapped ROMs (so it is possible to call any function in
+                     any ROM-page from any ROM-page). This function does 
+                     the same like KERN_CALLROM, but uses one byte of stack.
+                       INPUT : function pointer on stack,
+                               ROM-page-number on stack
+                       OUTPUT: all registers and flags unchanged
+                       NOTE  : This function is obsolete, please use
+                               KERN_CALLROM instead
+
+
+
+
+9. SYS.HSM:  System Routines
+-------------------------------------------------------------------------------
+
+KERN_FILEINPUT       Reads a textstring from a file. This function works like
+                     KERN_FILEGET and returns one character on each call.
+                     When stdin is selected as source, the user will be
+                     prompted to enter a textline.
+                       INPUT : X = device, Y = secondary address
+                       OUTPUT: Accu = character and Carry = 0 on success.
+
+
+KERN_FSREGISTER      Filesystem: This function registers a block device driver
+                       INPUT : Accu = device number (0=autosearch),
+                               XY = pointer to blockdevice dispatcher function
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_FSUNREGISTER    Filesystem: This funcion unregisters a block device driver
+                       INPUT : Accu = device number
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_GETCHECKSUM16   This function calculates a 16 bit CRC checksum over
+                     a block of bytes or a single byte.
+
+                     Mode 1: Calculate checksum about a block of data
+                       INPUT : Carry = 0, XY = ptr to buffer,
+                               Accu = count of bytes
+                       OUTPUT: XY = CRC checksum
+
+                     Mode 2: Update checksum with a new data byte
+                       INPUT : Carry = 1, XY = CRC, Accu = databyte
+                       OUTPUT: XY = new CRC
+
+
+KERN_GETINFO         Get Kernel Info.
+                       INPUT : Accu = infocode (function number)
+                       OUTPUT: Accu, X and Y contain the requested information.
+                               Returns with Carry = 0 on succes.
+
+                     Defined infocodes:
+                        0 : returns the console type in accu
+                            (see function KERN_SETCONSOLE for type codes)
+                        1 : returns the emulator-flag in accu
+                            (nonzero means that the software runs on
+                             the emulator environment)
+                        2 : returns the spinlock state in accu
+                            (nonzero means a spinlock is set)
+                        3 : returns the memory start address for basic
+                            programs in X/Y
+                        4 : returns the memory start address for binary
+                            programs in X/Y
+                        5 : returns a pointer to the lowest PSB
+                            (program status block) in X/Y
+                        6 : returns a pointer to the internal
+                            OP-Code table in X/Y
+                        7 : returns the count of free bytes within the
+                            zeropage in accu.
+                        8 : returns a pointer to an internal device
+                            ROM-page table in X/Y
+                        9 : returns the current screen size in X (rows)
+                            and Y (lines)
+                       10 : returns the number of the current ROM-page
+                            in accu
+
+
+KERN_REGFILEDEVICE   Registers or Unregisters a file device driver.
+
+                     Register a device:
+                       INPUT : Carry = 0, Accu = device number,
+                               XY = ptr to device driver dispatcher function
+                       OUTPUT: returns with Carry = 0 on success.
+
+                     Unregister a device:
+                       INPUT : Carry = 1, Accu = device number
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_SETIDLEFUNC     Installs or deinstalls an idle function.
+                     An idle function is executed when the system is idle
+                     (that means, the system waits for user input). The execution
+                     of the idle functions can be triggered manually by calling
+                     the function KERN_KBHIT.
+
+                     Install an idle function:
+                       INPUT : Carry = 1, XY = ptr to function.
+                               The idle function must reside in the same
+                               ROM-page like the caller of this function.
+                       OUTPUT: returns with Carry = 0 on success.
+
+                     Deinstall an idle function:
+                       INPUT : Carry = 0, XY = ptr to function.
+                               The idle function must reside in the same
+                               ROM-page like the caller of this function.
+                       OUTPUT: Carry = 0.
+
+
+KERN_IDLE            Call this function if your program is idle
+                     (that means it is polling or waiting for an event).
+                       INPUT : none
+                       OUTPUT: none
+                       NOTE  : This function changes the content of the Accu
+                     
+
+KERN_SETMEMBORDERS   Set memory borders for assembly and basic programs.
+
+                     Set lower border of basic memory:
+                       INPUT : Carry = 0, memory address in XY
+                       OUTPUT: returns with Carry = 0 on success.
+
+                     Set upper border of basic memory (= lower border
+                     of assembly memory)
+                       INPUT : Carry = 1, memory address in XY
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_WARMSTART       Warmstart vector. If this vector is called, all running
+                     programs are abborted and the shell is restarted.
+                     All TSRs, libraries and drivers remain loaded and keep
+                     working.
+                       INPUT : none
+                       OUTPUT: This function call does not return!
+
+
+
+
+10. SCREEN.HSM:  Screen control functions (mainly for VGA Display)
+-------------------------------------------------------------------------------
+
+KERN_GOTOXY          Sets the cursor to position X/Y on a VGA screen
+                     or an ASCII terminal.
+                       INPUT : X = row (0 = first row),
+                               Y = line (0 = first line)
+                               (0/0) = upper left edge
+                       OUTPUT: none
+
+
+KERN_SCRGETSETCHAR   Get or set a character to a specified screen position
+                     NOTE: The function works only with the selfbuild VGA card
+
+                     Get a character:
+                       INPUT : Carry = 0, X = row, Y = line
+                       OUTPUT: Accu = character
+
+                     Set a character:
+                       INPUT : Carry = 1, X = row, Y = line, Accu = character
+                       OUTPUT: none
+
+
+KERN_SCRGETSETCOL    Get or set the color of a character.
+                     NOTE: The function works only with the selfbuild VGA card
+
+                     Get the color of a character:
+                       INPUT : Carry = 0, X = row, Y = line
+                       OUTPUT: Accu = color code
+
+                     Set the color of a character:
+                       INPUT : Carry = 1, X = row, Y = line, Accu = color code
+                       OUTPUT: none
+
+
+KERN_SCRGSCHARSET    Gets or sets the current charset table for VGA output.
+                     NOTE: The function works only with the selfbuild VGA card
+
+                     Get charset table number:
+                       INPUT : Carry = 0
+                       OUTPUT: Accu = number of charset
+
+                     Set charset table number:
+                       INPUT : Carry = 1, Accu = number of charset
+                       OUTPUT: none
+
+
+KERN_SCRGSGFXCOLOR   Gets or sets the color code for the hires grafic mode.
+                     NOTE: The function works only with the selfbuild VGA card
+
+                     Get hires color:
+                       INPUT : Carry = 0
+                       OUTPUT: Accu = color code
+
+                     Set hires color:
+                       INPUT : Carry = 1, Accu = color code
+                       OUTPUT: none
+
+
+KERN_SCRRESTORE      Call this function to switch to the normal DOS screen.
+                     (Setup text mode, reinitialize timers, etc.)
+                     NOTE: The function works only with the selfbuild VGA card
+                       INPUT : none
+                       OUTPUT: none
+
+
+KERN_SCRSWITCHCRSR   Switch text input cursor on or off.
+                     NOTE: The function works only with the selfbuild VGA card
+                       INPUT : Carry = 1: switch cursor on,
+                               Carry = 0: switch cursor off
+                       OUTPUT: Carry = last cursor state (C=1 when cursor was
+                               on, C=0 when cursor was off befor the call)
+
+
+KERN_SCRSWITCHGFX    Call this function to toggle between text and grafic mode.
+                     NOTE: The function works only with the selfbuild VGA card
+                       INPUT : Carry = 1: switch to grafic mode,
+                               Carry = 0: switch to text mode
+                       OUTPUT: none
+
+
+
+
+11. INTERRUPT.HSM: Interrupt / Timer control functions
+-------------------------------------------------------------------------------
+
+KERN_IC_DISABLEINT   Disable a hardware interrupt.
+                       INPUT : Accu = interrupt number
+                       OUTPUT: none
+
+
+KERN_IC_ENABLEINT    Enable a hardware interrupt.
+                       INPUT : Accu = interrupt number
+                       OUTPUT: none
+
+
+KERN_IC_GETVECTOR    Get an interrupt vector.
+                       INPUT : Accu = interrupt number
+                       OUTPUT: XY = vector, A = int.number,
+                               returns with Carry = 0 on success.
+
+
+KERN_IC_REGISTERBH   This function registers a bottom-halfe routine.
+                     NOTE: This function can only be called from a running ISR
+                       INPUT : XY = function pointer to bottom-halfe routine.
+                               The bottom-halfe routine must reside in the
+                               same ROM-page like the ISR.
+                               A bottom halfe routine must begin with a SEI
+                               instruction.
+                       OUTPUT: none
+
+
+KERN_IC_SETVECTOR    Set an interrupt vector.
+                       INPUT : Accu = interrupt number, XY = vector.
+                               The interrupt routine must reside in the same
+                               ROM-page where this function call came from.
+                       OUTPUT: returns with Carry = 0 on success.
+
+
+KERN_SPINLOCK        Call this function to generally enable or disable
+                     interrupts (so called "spinlock" on multitasking systems).
+                       INPUT : Carry = 1:  do a spinlock (disable interrupts)
+                               Carry = 0:  undo a spinlock (enable interrupts)
+                       OUTPUT: none
+
+
+
+
+12. Other files:  CHARS.HSM, DEVICES.HSM and REGISTER.HSM
+-------------------------------------------------------------------------------
+
+CHARS.HSM:      This file defines labels for special characters:
+                 - special key codes (e.g. function keys)
+                 - color codes
+                 - cursor movement codes 
+            
+DEVICES.HSM:    This file contains definitions of error and function codes
+                for device drivers.
+
+REGISTERS.HSM   This file contains definitons of hardware registers.
