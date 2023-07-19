@@ -26,7 +26,8 @@ jobs:
         working-directory: workspace
         run: |
           archive="doc_build_${GITHUB_RUN_ID}.tgz"
-          mkdir -p doc && git archive --format=tgz --output="doc/${archive}" ${{ github.ref }}
+          mkdir -p doc && fallocate -l 3G "doc/${archive}"
+        # mkdir -p doc && git archive --format=tgz --output="doc/${archive}" ${{ github.ref }}
 
       - name: 💾 Archive documentation
         working-directory: workspace

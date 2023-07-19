@@ -15,34 +15,38 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
-    # - name: Download artifact
-    #   uses: actions/github-script@v6
-    #   with:
-    #     script: |
-    #       let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
-    #          owner: context.repo.owner,
-    #          repo: context.repo.repo,
-    #          run_id: ${{ github.event.workflow_run.id }},
-    #       });
-    #       let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-    #         return artifact.name == "doc"
-    #       })[0];
-    #       let download = await github.rest.actions.downloadArtifact({
-    #          owner: context.repo.owner,
-    #          repo: context.repo.repo,
-    #          artifact_id: matchArtifact.id,
-    #          archive_format: 'zip',
-    #       });
-    #       let fs = require('fs');
+      - name: 📥 Download artifact
+        uses: actions/github-script@v6
+        with:
+          script: |
+            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: ${{ github.event.workflow_run.id }},
+            });
+            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "doc"
+            })[0];
+            let download = await github.rest.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: matchArtifact.id,
+               archive_format: 'zip',
+            });
+            let fs = require('fs');
+            let writeStream = fs.createWriteStream('${{ github.workspace }}/doc.zip', 'binary');
+            download.data.pipe(writeStream);
+    #       let readStream = fs.createReadStream(download.data, 'binary');
+    #       readStream.pipe(writeStream);
     #       fs.writeFileSync('${{ github.workspace }}/doc.zip', Buffer.from(download.data), 'binary');
 
-      - name: 📥 Download artifact
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          run_id: ${{ github.event.workflow_run.id }}
-          if_no_artifact_found: warn
-          skip_unpack: true
-          name: doc
+    # - name: 📥 Download artifact
+    #   uses: dawidd6/action-download-artifact@v2
+    #   with:
+    #     run_id: ${{ github.event.workflow_run.id }}
+    #     if_no_artifact_found: warn
+    #     skip_unpack: true
+    #     name: doc
 
       - name: 📤 Upload documentation
         env:
@@ -54,13 +58,13 @@ jobs:
         run: |
           ls -R
           unzip doc.zip
-          mkdir -p ~/.ssh && \
-            ssh-keyscan -p ${PORT} ${HOST} >> ~/.ssh/known_hosts
-          touch ~/.ssh/private && \
-            chmod 600 ~/.ssh/private && \
-            echo -e "${KEY}" > ~/.ssh/private
-          # Don't upload the archive and workflow metadata
-          files=$(ls -I doc.zip -I pr.txt)
-          for file in ${files}; do
-            scp -i ~/.ssh/private "${file}" "scp://${USER}@${HOST}:${PORT}/${INBOX}/${file}"
-          done
+        # mkdir -p ~/.ssh && \
+        #   ssh-keyscan -p ${PORT} ${HOST} >> ~/.ssh/known_hosts
+        # touch ~/.ssh/private && \
+        #   chmod 600 ~/.ssh/private && \
+        #   echo -e "${KEY}" > ~/.ssh/private
+        # # Don't upload the archive and workflow metadata
+        # files=$(ls -I doc.zip -I pr.txt)
+        # for file in ${files}; do
+        #   scp -i ~/.ssh/private "${file}" "scp://${USER}@${HOST}:${PORT}/${INBOX}/${file}"
+        # done
